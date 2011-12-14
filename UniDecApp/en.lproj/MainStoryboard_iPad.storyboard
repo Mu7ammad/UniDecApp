@@ -1,24 +1,137 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1906" systemVersion="11A511" targetRuntime="iOS.CocoaTouch.iPad" nextObjectID="6" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="902"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
     </dependencies>
     <scenes>
         <scene sceneID="4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5">
+                <viewController id="2" customClass="BattleViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y4c-gO-4Bo">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="cpv-nt-5gv">
+                                <rect key="frame" x="0.0" y="484" width="768" height="500"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="card.jpg" id="KqA-x9-dgE">
+                                        <rect key="frame" x="224" y="10" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="card.jpg" id="HIJ-fZ-Iry">
+                                        <rect key="frame" x="224" y="10" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="card.jpg" id="cOo-ml-OoM">
+                                        <rect key="frame" x="224" y="10" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="card.jpg" id="zvU-rl-HIz">
+                                        <rect key="frame" x="224" y="10" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="card.jpg" id="FzT-4R-sSW">
+                                        <rect key="frame" x="224" y="10" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="card.jpg" id="biF-d6-0VC">
+                                        <rect key="frame" x="224" y="10" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="card.jpg" id="7F5-mW-xpM">
+                                        <rect key="frame" x="224" y="10" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="card.jpg" id="bpi-Wz-xgA">
+                                <rect key="frame" x="224" y="494" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cX8-vh-C9i" appends="YES" id="C69-gE-J5E"/>
+                            <outletCollection property="gestureRecognizers" destination="gzX-Vb-qkj" appends="YES" id="hQr-za-oqS"/>
+                            <outletCollection property="gestureRecognizers" destination="gdg-SJ-xPY" appends="YES" id="lLV-Xb-RUm"/>
+                            <outletCollection property="gestureRecognizers" destination="v8C-50-6bO" appends="YES" id="Zce-7i-geH"/>
+                            <outletCollection property="gestureRecognizers" destination="Bsc-TO-rkb" appends="YES" id="puU-26-33C"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="Background" destination="Y4c-gO-4Bo" id="LQH-8p-MqS"/>
+                        <outlet property="CardPanel" destination="cpv-nt-5gv" id="JnU-yj-zhI"/>
+                        <outlet property="SelectedCard" destination="bpi-Wz-xgA" id="nWj-kn-ou9"/>
+                        <outlet property="UpSwipeSelectGest" destination="v8C-50-6bO" id="4w4-Iz-1UE"/>
+                        <outlet property="card1" destination="KqA-x9-dgE" id="TOe-oS-LxZ"/>
+                        <outlet property="card2" destination="HIJ-fZ-Iry" id="Rp2-26-CzG"/>
+                        <outlet property="card3" destination="cOo-ml-OoM" id="Onp-uX-aTd"/>
+                        <outlet property="card4" destination="zvU-rl-HIz" id="goJ-UT-xsz"/>
+                        <outlet property="card5" destination="FzT-4R-sSW" id="eyY-W9-ErC"/>
+                        <outlet property="card6" destination="biF-d6-0VC" id="Gct-lU-TES"/>
+                        <outlet property="card7" destination="7F5-mW-xpM" id="z1M-de-gjt"/>
+                    </connections>
                 </viewController>
+                <swipeGestureRecognizer direction="right" id="cX8-vh-C9i">
+                    <connections>
+                        <action selector="RightSwipeAction:" destination="2" id="x51-ek-QQk"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="gzX-Vb-qkj">
+                    <connections>
+                        <action selector="LeftSwipeAction:" destination="2" id="2DD-c6-dy0"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="gdg-SJ-xPY">
+                    <connections>
+                        <action selector="TapAction:" destination="2" id="3AK-KU-VNc"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="v8C-50-6bO">
+                    <connections>
+                        <action selector="UpSwipeSelectAction:" destination="2" id="oMy-Qx-bFr"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="Bsc-TO-rkb">
+                    <connections>
+                        <action selector="BackgroundTapAction:" destination="2" id="ex7-zW-XFJ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="card.jpg" width="320" height="480"/>
+    </resources>
+    <classes>
+        <class className="BattleViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BattleViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="BackgroundTapAction:"/>
+                <relationship kind="action" name="LeftSwipeAction:"/>
+                <relationship kind="action" name="RightSwipeAction:"/>
+                <relationship kind="action" name="TapAction:"/>
+                <relationship kind="action" name="UpSwipeSelectAction:"/>
+                <relationship kind="outlet" name="Background" candidateClass="UIView"/>
+                <relationship kind="outlet" name="CardPanel" candidateClass="UIView"/>
+                <relationship kind="outlet" name="SelectedCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="UpSwipeSelectGest" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="card1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="card2" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="card3" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="card4" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="card5" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="card6" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="card7" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
