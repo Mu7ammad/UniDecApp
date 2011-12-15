@@ -7,7 +7,37 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Card.h"
 
+
+//connect to UI (Cards swiping and selecting)
 @interface CardPanel : NSObject
+
+{
+
+    NSArray* Cards;
+    
+    Card* SelectedCard;
+    
+    int centerCard;
+    
+}
+
+@property bool PanelDown;
+@property (weak, nonatomic) UIView* PanelView;
+
+//modify later
+-(void) takeCardViews: (NSArray*) cardViews and: (UIImageView*) selectedCardView;
+
+-(void) ElasticReboundToRight;
+-(void) ElasticReboundToLeft;
+-(void) PushLeft;
+-(void) PushRight;
+-(void) PushDown;
+-(void) PullUp;
+-(void) PushRight;
+
+-(Card*) SelectCard;
+
 
 @end

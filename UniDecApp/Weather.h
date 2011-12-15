@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+//connect to UI
+
 @interface Weather : NSObject
     
 @property bool HotCold, WetDry;

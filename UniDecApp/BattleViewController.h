@@ -7,19 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardPanel.h"
+
 
 @interface BattleViewController : UIViewController
 
 {   
-    NSMutableArray* Cards;    
     
-    int centerCard;
+    CardPanel* cardPanel;
     
-    bool Paneldown;
 }
 
-@property (weak, nonatomic) IBOutlet UIView *Background;
-@property (weak, nonatomic) IBOutlet UIView *CardPanel;
+@property (weak, nonatomic) IBOutlet UIView *BackgroundView;
+@property (weak, nonatomic) IBOutlet UIView *CardPanelView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *card1;
 @property (weak, nonatomic) IBOutlet UIImageView *card2;
@@ -30,18 +30,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *card7;
 
 @property (weak, nonatomic) IBOutlet UIImageView *SelectedCard;
-
--(void) ScaleUpToLeft:(UIImageView*) card;
--(void) ScaleDownToLeft:(UIImageView*) card;
--(void) ScaleUpToRight:(UIImageView*) card;
--(void) ScaleDownToRight:(UIImageView*) card;
-
--(void) ElasticReboundToRight;
--(void) ElasticReboundToLeft;
--(void) PushCardPanelLeft;
--(void) PushCardPanelRight;
--(void) PushCardPanelDown;
--(void) PullCardPanelUp;
 
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *UpSwipeSelectGest;
 

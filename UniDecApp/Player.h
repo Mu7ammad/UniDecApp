@@ -11,6 +11,8 @@
 #import "MoveProb.h"
 #import "Move.h"
 
+// connect to UI (stats)
+
 @interface Player : NSObject
 {
     Power* power;

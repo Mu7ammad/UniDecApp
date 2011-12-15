@@ -48,8 +48,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="K51-wz-1cu" appends="YES" id="i2h-NL-a4V"/>
+                                    <outletCollection property="gestureRecognizers" destination="zCo-86-Of8" appends="YES" id="iYj-qM-9Hw"/>
+                                    <outletCollection property="gestureRecognizers" destination="1EE-Zt-0xG" appends="YES" id="XcL-tg-qtG"/>
+                                    <outletCollection property="gestureRecognizers" destination="VZE-1g-KsD" appends="YES" id="b6m-el-cDh"/>
+                                </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="card.jpg" id="bpi-Wz-xgA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="swipe.png" id="bpi-Wz-xgA">
                                 <rect key="frame" x="224" y="494" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -57,18 +63,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="cX8-vh-C9i" appends="YES" id="C69-gE-J5E"/>
-                            <outletCollection property="gestureRecognizers" destination="gzX-Vb-qkj" appends="YES" id="hQr-za-oqS"/>
-                            <outletCollection property="gestureRecognizers" destination="gdg-SJ-xPY" appends="YES" id="lLV-Xb-RUm"/>
-                            <outletCollection property="gestureRecognizers" destination="v8C-50-6bO" appends="YES" id="Zce-7i-geH"/>
-                            <outletCollection property="gestureRecognizers" destination="Bsc-TO-rkb" appends="YES" id="puU-26-33C"/>
+                            <outletCollection property="gestureRecognizers" destination="1dw-aD-lnk" appends="YES" id="Fzm-LZ-9QK"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="Background" destination="Y4c-gO-4Bo" id="LQH-8p-MqS"/>
-                        <outlet property="CardPanel" destination="cpv-nt-5gv" id="JnU-yj-zhI"/>
+                        <outlet property="BackgroundView" destination="Y4c-gO-4Bo" id="vFF-sX-V3r"/>
+                        <outlet property="CardPanelView" destination="cpv-nt-5gv" id="Tuz-md-yys"/>
                         <outlet property="SelectedCard" destination="bpi-Wz-xgA" id="nWj-kn-ou9"/>
-                        <outlet property="UpSwipeSelectGest" destination="v8C-50-6bO" id="4w4-Iz-1UE"/>
+                        <outlet property="UpSwipeSelectGest" destination="1EE-Zt-0xG" id="y4l-Ia-xVG"/>
                         <outlet property="card1" destination="KqA-x9-dgE" id="TOe-oS-LxZ"/>
                         <outlet property="card2" destination="HIJ-fZ-Iry" id="Rp2-26-CzG"/>
                         <outlet property="card3" destination="cOo-ml-OoM" id="Onp-uX-aTd"/>
@@ -78,29 +80,29 @@
                         <outlet property="card7" destination="7F5-mW-xpM" id="z1M-de-gjt"/>
                     </connections>
                 </viewController>
-                <swipeGestureRecognizer direction="right" id="cX8-vh-C9i">
+                <swipeGestureRecognizer direction="right" id="K51-wz-1cu">
                     <connections>
-                        <action selector="RightSwipeAction:" destination="2" id="x51-ek-QQk"/>
+                        <action selector="RightSwipeAction:" destination="2" id="fs0-W8-nLq"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="gzX-Vb-qkj">
+                <swipeGestureRecognizer direction="left" id="zCo-86-Of8">
                     <connections>
-                        <action selector="LeftSwipeAction:" destination="2" id="2DD-c6-dy0"/>
+                        <action selector="LeftSwipeAction:" destination="2" id="H82-uB-vcE"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <tapGestureRecognizer id="gdg-SJ-xPY">
+                <swipeGestureRecognizer direction="up" id="1EE-Zt-0xG">
                     <connections>
-                        <action selector="TapAction:" destination="2" id="3AK-KU-VNc"/>
+                        <action selector="UpSwipeSelectAction:" destination="2" id="8K2-FO-D1O"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="VZE-1g-KsD">
+                    <connections>
+                        <action selector="TapAction:" destination="2" id="KFq-Gh-vCU"/>
                     </connections>
                 </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="up" id="v8C-50-6bO">
+                <tapGestureRecognizer id="1dw-aD-lnk">
                     <connections>
-                        <action selector="UpSwipeSelectAction:" destination="2" id="oMy-Qx-bFr"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <tapGestureRecognizer id="Bsc-TO-rkb">
-                    <connections>
-                        <action selector="BackgroundTapAction:" destination="2" id="ex7-zW-XFJ"/>
+                        <action selector="BackgroundTapAction:" destination="2" id="7d5-GP-zM8"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -108,6 +110,7 @@
     </scenes>
     <resources>
         <image name="card.jpg" width="320" height="480"/>
+        <image name="swipe.png" width="241" height="75"/>
     </resources>
     <classes>
         <class className="BattleViewController" superclassName="UIViewController">
@@ -118,8 +121,8 @@
                 <relationship kind="action" name="RightSwipeAction:"/>
                 <relationship kind="action" name="TapAction:"/>
                 <relationship kind="action" name="UpSwipeSelectAction:"/>
-                <relationship kind="outlet" name="Background" candidateClass="UIView"/>
-                <relationship kind="outlet" name="CardPanel" candidateClass="UIView"/>
+                <relationship kind="outlet" name="BackgroundView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="CardPanelView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="SelectedCard" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="UpSwipeSelectGest" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="card1" candidateClass="UIImageView"/>

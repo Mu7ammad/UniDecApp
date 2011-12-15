@@ -8,6 +8,7 @@
 
 #import "Buff.h"
 
+//affect player
 @interface MoveBuff : Buff
 
 

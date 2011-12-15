@@ -8,6 +8,7 @@
 
 #import "Buff.h"
 
+//affect turn
 @interface TurnBuff : Buff
 
 @end

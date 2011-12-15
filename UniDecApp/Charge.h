@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Move.h"
 
+//connect to UI
+
 @interface Charge : NSObject
 {
 

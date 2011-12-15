@@ -8,6 +8,7 @@
 
 #import "Buff.h"
 
+//affect weather
 @interface WeatherBuff : Buff
 
 @end
