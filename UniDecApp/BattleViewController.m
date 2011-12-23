@@ -14,6 +14,9 @@
 
 @synthesize BackgroundView;
 @synthesize CardPanelView;
+@synthesize myCharge;
+@synthesize hisCharge;
+@synthesize currentWeather;
 
 @synthesize card1;
 @synthesize card2;
@@ -59,6 +62,9 @@
     [self setUpSwipeSelectGest:nil];
     
     [self setSelectedCard:nil];
+    [self setMyCharge:nil];
+    [self setHisCharge:nil];
+    [self setCurrentWeather:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -10,6 +10,11 @@
 
 //affect player
 @interface MoveBuff : Buff
+{
 
+    NSString* move;
+}
+
+-(id)init:(NSString*)Move;
 
 @end

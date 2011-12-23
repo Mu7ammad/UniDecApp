@@ -8,25 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ElementBuff.h"
+#import "MoveBuff.h"
+#import "WeatherBuff.h"
+#import "TurnBuff.h"
+
 @interface Card : NSObject
 {
     
-    NSString* name;
-    
     NSDictionary* data;
-    
-    int rank; //how rare it is
-    
-    int element; //1,2,3,4
     
 }
 
 @property (weak, nonatomic) UIImageView* view;
+@property (strong) NSString* name;
+
 
 -(NSArray*) generateBuffs;
 
--(bool) checkCondition: (int) weatehr;
-
+-(id)init:(NSString*)cardName from:(NSDictionary*) CardLibrary;
 
 -(void) ScaleUpToLeft;
 -(void) ScaleDownToLeft;

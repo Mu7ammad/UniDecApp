@@ -8,6 +8,27 @@
 
 #import "TurnBuff.h"
 
+
 @implementation TurnBuff
+
+-(id)init:(NSString *)Turn
+{
+    if (Turn) {
+        
+        self=[super init];
+        
+        turn = [NSString stringWithFormat:Turn];
+        
+        return self;
+    }
+    
+    else
+    {
+        return nil;
+    
+    }
+
+
+}
 
 @end

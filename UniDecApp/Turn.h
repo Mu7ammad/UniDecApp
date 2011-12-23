@@ -7,17 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Buff.h"
+
 #import "Move.h"
+
+#import "Player.h"
+#import "Weather.h"
+#import "ChargeMeter.h"
 
 @interface Turn : NSObject
 {
-    NSArray* Buffs;
     
-    Move *Move1, *Move2;
+    Player* me;
+    Player* him;
     
-
+    Weather* weather;
+    
+    ChargeMeter* chargeMeter;
+    
 }
+
+
 
 -(void) executeTurn;
 

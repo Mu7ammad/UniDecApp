@@ -8,10 +8,46 @@
 
 #import "Card.h"
 
+
 @implementation Card
 
-@synthesize view;
+@synthesize view, name;
 
+
+-(id)init:(NSString*)cardName from:(NSDictionary*) CardLibrary
+{
+
+    self = [super init];
+
+    self.name = cardName;
+    
+    data = [CardLibrary objectForKey:name];
+
+    return self;
+    
+}
+
+
+
+-(NSArray *)generateBuffs
+{
+            
+    Buff* elBuff = [[ElementBuff alloc]init:[data objectForKey:@"Element"]];
+    
+    Buff* moBuff = [[MoveBuff alloc]init:[data objectForKey:@"Move"]];
+        
+    Buff* weBuff = [[WeatherBuff alloc]init:[data objectForKey:@"Weather"]];
+    
+    Buff* tuBuff = [[TurnBuff alloc]init:[data objectForKey:@"Turn"]];
+    
+    NSArray* buffs = [NSArray arrayWithObjects:elBuff,moBuff, weBuff,tuBuff,nil];
+        
+    return buffs;
+    
+}
+
+
+//Transformations
 
 -(void)ScaleUpToLeft
 {

@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E4025FF14993DE70060EBE4 /* Pocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025D914993DE70060EBE4 /* Pocket.m */; };
+		3E23C3AA14A50AD90009E4FA /* CardLibrary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E23C3A914A50AD90009E4FA /* CardLibrary.plist */; };
+		3E23C3AE14A52D760009E4FA /* ElementBuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E23C3AD14A52D760009E4FA /* ElementBuff.m */; };
+		3E4025FF14993DE70060EBE4 /* Pack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025D914993DE70060EBE4 /* Pack.m */; };
 		3E40260014993DE70060EBE4 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025DB14993DE70060EBE4 /* Profile.m */; };
 		3E40260114993DE70060EBE4 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025DD14993DE70060EBE4 /* Player.m */; };
 		3E40260214993DE70060EBE4 /* Power.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025DF14993DE70060EBE4 /* Power.m */; };
 		3E40260314993DE70060EBE4 /* MoveProb.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025E114993DE70060EBE4 /* MoveProb.m */; };
 		3E40260414993DE70060EBE4 /* Buff.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025E314993DE70060EBE4 /* Buff.m */; };
 		3E40260514993DE70060EBE4 /* MoveBuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025E514993DE70060EBE4 /* MoveBuff.m */; };
-		3E40260614993DE70060EBE4 /* PowerBuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025E714993DE70060EBE4 /* PowerBuff.m */; };
 		3E40260714993DE70060EBE4 /* WeatherBuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025E914993DE70060EBE4 /* WeatherBuff.m */; };
 		3E40260814993DE70060EBE4 /* TurnBuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025EB14993DE70060EBE4 /* TurnBuff.m */; };
 		3E40260914993DE70060EBE4 /* Move.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025ED14993DE70060EBE4 /* Move.m */; };
@@ -22,7 +23,7 @@
 		3E40260B14993DE70060EBE4 /* DefendMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025F114993DE70060EBE4 /* DefendMove.m */; };
 		3E40260C14993DE70060EBE4 /* RestMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025F314993DE70060EBE4 /* RestMove.m */; };
 		3E40260D14993DE70060EBE4 /* DestroyMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025F514993DE70060EBE4 /* DestroyMove.m */; };
-		3E40260E14993DE70060EBE4 /* Charge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025F714993DE70060EBE4 /* Charge.m */; };
+		3E40260E14993DE70060EBE4 /* ChargeMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025F714993DE70060EBE4 /* ChargeMeter.m */; };
 		3E40260F14993DE70060EBE4 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025F914993DE70060EBE4 /* Weather.m */; };
 		3E40261014993DE70060EBE4 /* CardPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025FB14993DE70060EBE4 /* CardPanel.m */; };
 		3E40261114993DE70060EBE4 /* Turn.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025FD14993DE70060EBE4 /* Turn.m */; };
@@ -56,8 +57,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3E4025D814993DE70060EBE4 /* Pocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pocket.h; sourceTree = "<group>"; };
-		3E4025D914993DE70060EBE4 /* Pocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pocket.m; sourceTree = "<group>"; };
+		3E23C3A914A50AD90009E4FA /* CardLibrary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CardLibrary.plist; sourceTree = "<group>"; };
+		3E23C3AC14A52D760009E4FA /* ElementBuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementBuff.h; sourceTree = "<group>"; };
+		3E23C3AD14A52D760009E4FA /* ElementBuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementBuff.m; sourceTree = "<group>"; };
+		3E4025D814993DE70060EBE4 /* Pack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pack.h; sourceTree = "<group>"; };
+		3E4025D914993DE70060EBE4 /* Pack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pack.m; sourceTree = "<group>"; };
 		3E4025DA14993DE70060EBE4 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		3E4025DB14993DE70060EBE4 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		3E4025DC14993DE70060EBE4 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -70,8 +74,6 @@
 		3E4025E314993DE70060EBE4 /* Buff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buff.m; sourceTree = "<group>"; };
 		3E4025E414993DE70060EBE4 /* MoveBuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveBuff.h; sourceTree = "<group>"; };
 		3E4025E514993DE70060EBE4 /* MoveBuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveBuff.m; sourceTree = "<group>"; };
-		3E4025E614993DE70060EBE4 /* PowerBuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerBuff.h; sourceTree = "<group>"; };
-		3E4025E714993DE70060EBE4 /* PowerBuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerBuff.m; sourceTree = "<group>"; };
 		3E4025E814993DE70060EBE4 /* WeatherBuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherBuff.h; sourceTree = "<group>"; };
 		3E4025E914993DE70060EBE4 /* WeatherBuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherBuff.m; sourceTree = "<group>"; };
 		3E4025EA14993DE70060EBE4 /* TurnBuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnBuff.h; sourceTree = "<group>"; };
@@ -86,8 +88,8 @@
 		3E4025F314993DE70060EBE4 /* RestMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestMove.m; sourceTree = "<group>"; };
 		3E4025F414993DE70060EBE4 /* DestroyMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestroyMove.h; sourceTree = "<group>"; };
 		3E4025F514993DE70060EBE4 /* DestroyMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestroyMove.m; sourceTree = "<group>"; };
-		3E4025F614993DE70060EBE4 /* Charge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Charge.h; sourceTree = "<group>"; };
-		3E4025F714993DE70060EBE4 /* Charge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Charge.m; sourceTree = "<group>"; };
+		3E4025F614993DE70060EBE4 /* ChargeMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ChargeMeter.h; sourceTree = "<group>"; };
+		3E4025F714993DE70060EBE4 /* ChargeMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChargeMeter.m; sourceTree = "<group>"; };
 		3E4025F814993DE70060EBE4 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		3E4025F914993DE70060EBE4 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		3E4025FA14993DE70060EBE4 /* CardPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardPanel.h; sourceTree = "<group>"; };
@@ -147,10 +149,11 @@
 		3E40261214993DFD0060EBE4 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				3E4025D814993DE70060EBE4 /* Pocket.h */,
-				3E4025D914993DE70060EBE4 /* Pocket.m */,
+				3E4025D814993DE70060EBE4 /* Pack.h */,
+				3E4025D914993DE70060EBE4 /* Pack.m */,
 				3E4026171499410E0060EBE4 /* Card.h */,
 				3E4026181499410E0060EBE4 /* Card.m */,
+				3E23C3A914A50AD90009E4FA /* CardLibrary.plist */,
 			);
 			name = Cards;
 			sourceTree = "<group>";
@@ -158,8 +161,8 @@
 		3E40261314993E110060EBE4 /* Battle */ = {
 			isa = PBXGroup;
 			children = (
-				3E4025F614993DE70060EBE4 /* Charge.h */,
-				3E4025F714993DE70060EBE4 /* Charge.m */,
+				3E4025F614993DE70060EBE4 /* ChargeMeter.h */,
+				3E4025F714993DE70060EBE4 /* ChargeMeter.m */,
 				3E4025F814993DE70060EBE4 /* Weather.h */,
 				3E4025F914993DE70060EBE4 /* Weather.m */,
 				3E4025FA14993DE70060EBE4 /* CardPanel.h */,
@@ -197,12 +200,12 @@
 				3E4025E314993DE70060EBE4 /* Buff.m */,
 				3E4025E414993DE70060EBE4 /* MoveBuff.h */,
 				3E4025E514993DE70060EBE4 /* MoveBuff.m */,
-				3E4025E614993DE70060EBE4 /* PowerBuff.h */,
-				3E4025E714993DE70060EBE4 /* PowerBuff.m */,
 				3E4025E814993DE70060EBE4 /* WeatherBuff.h */,
 				3E4025E914993DE70060EBE4 /* WeatherBuff.m */,
 				3E4025EA14993DE70060EBE4 /* TurnBuff.h */,
 				3E4025EB14993DE70060EBE4 /* TurnBuff.m */,
+				3E23C3AC14A52D760009E4FA /* ElementBuff.h */,
+				3E23C3AD14A52D760009E4FA /* ElementBuff.m */,
 			);
 			name = Buffs;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				3EEF234014981248002CEC7F /* MainStoryboard_iPad.storyboard in Resources */,
 				3ED22182149939450003C2B4 /* card.jpg in Resources */,
 				3EAFBF7E1499875C009359F5 /* swipe.png in Resources */,
+				3E23C3AA14A50AD90009E4FA /* CardLibrary.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,14 +425,13 @@
 				3EEF233614981248002CEC7F /* main.m in Sources */,
 				3EEF233A14981248002CEC7F /* AppDelegate.m in Sources */,
 				3EEF234314981248002CEC7F /* BattleViewController.m in Sources */,
-				3E4025FF14993DE70060EBE4 /* Pocket.m in Sources */,
+				3E4025FF14993DE70060EBE4 /* Pack.m in Sources */,
 				3E40260014993DE70060EBE4 /* Profile.m in Sources */,
 				3E40260114993DE70060EBE4 /* Player.m in Sources */,
 				3E40260214993DE70060EBE4 /* Power.m in Sources */,
 				3E40260314993DE70060EBE4 /* MoveProb.m in Sources */,
 				3E40260414993DE70060EBE4 /* Buff.m in Sources */,
 				3E40260514993DE70060EBE4 /* MoveBuff.m in Sources */,
-				3E40260614993DE70060EBE4 /* PowerBuff.m in Sources */,
 				3E40260714993DE70060EBE4 /* WeatherBuff.m in Sources */,
 				3E40260814993DE70060EBE4 /* TurnBuff.m in Sources */,
 				3E40260914993DE70060EBE4 /* Move.m in Sources */,
@@ -436,11 +439,12 @@
 				3E40260B14993DE70060EBE4 /* DefendMove.m in Sources */,
 				3E40260C14993DE70060EBE4 /* RestMove.m in Sources */,
 				3E40260D14993DE70060EBE4 /* DestroyMove.m in Sources */,
-				3E40260E14993DE70060EBE4 /* Charge.m in Sources */,
+				3E40260E14993DE70060EBE4 /* ChargeMeter.m in Sources */,
 				3E40260F14993DE70060EBE4 /* Weather.m in Sources */,
 				3E40261014993DE70060EBE4 /* CardPanel.m in Sources */,
 				3E40261114993DE70060EBE4 /* Turn.m in Sources */,
 				3E4026191499410E0060EBE4 /* Card.m in Sources */,
+				3E23C3AE14A52D760009E4FA /* ElementBuff.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,14 +1,13 @@
 //
-//  PowerBuff.h
+//  Charge.m
 //  DecApp
 //
 //  Created by Muhammad Hilal on 12/4/11.
 //  Copyright (c) 2011 Pirates. All rights reserved.
 //
 
-#import "Buff.h"
+#import "ChargeMeter.h"
 
-//affect player
-@interface PowerBuff : Buff
+@implementation ChargeMeter
 
 @end

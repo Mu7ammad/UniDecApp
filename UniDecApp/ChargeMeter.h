@@ -1,5 +1,5 @@
 //
-//  Buff.h
+//  Charge.h
 //  DecApp
 //
 //  Created by Muhammad Hilal on 12/4/11.
@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Turn.h"
+#import "Move.h"
 
-@interface Buff : NSObject
+//connect to UI
+
+@interface ChargeMeter : NSObject
 {
-    bool target;
 
+    int c, boundary;
 }
 
--(void) applyBuff:(Turn*) turn;
+-(void) applyMoves:(Move*) move1 and:(Move*) move2;
 
 @end

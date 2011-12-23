@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CardPanel.h"
-
+#import "Buff.h"
+#import "Turn.h"
 
 @interface BattleViewController : UIViewController
 
@@ -16,10 +17,22 @@
     
     CardPanel* cardPanel;
     
+    NSMutableArray* buffs;
+    
+    
+    
+    Turn* turn;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *BackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *CardPanelView;
+
+
+//to be replaced with proper UI elements
+@property (weak, nonatomic) IBOutlet UILabel *myCharge;
+@property (weak, nonatomic) IBOutlet UILabel *hisCharge;
+@property (weak, nonatomic) IBOutlet UILabel *currentWeather;
+//
 
 @property (weak, nonatomic) IBOutlet UIImageView *card1;
 @property (weak, nonatomic) IBOutlet UIImageView *card2;

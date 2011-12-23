@@ -10,4 +10,22 @@
 
 @implementation WeatherBuff
 
+-(id)init:(NSString *)Weather
+{
+    if (Weather) {
+        self = [super init];
+        
+        weather = [NSString stringWithFormat:Weather];
+        
+        return self;
+    }
+    
+    else
+    {
+        return nil;
+    }
+
+
+}
+
 @end

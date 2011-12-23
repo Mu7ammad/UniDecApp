@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Fire Attack</key>
+	<dict>
+		<key>Move</key>
+		<string>Attack</string>
+		<key>Element</key>
+		<string>Fire</string>
+	</dict>
+	<key>Fire Defense</key>
+	<dict>
+		<key>Move</key>
+		<string>Defense</string>
+		<key>Element</key>
+		<string>Fire</string>
+	</dict>
+	<key>Fire Rest</key>
+	<dict>
+		<key>Move</key>
+		<string>Rest</string>
+		<key>Element</key>
+		<string>Fire</string>
+	</dict>
+	<key>Air Attack</key>
+	<dict>
+		<key>Move</key>
+		<string>Attack</string>
+		<key>Element</key>
+		<string>Air</string>
+	</dict>
+	<key>Air Defense</key>
+	<dict>
+		<key>Move</key>
+		<string>Defense</string>
+		<key>Element</key>
+		<string>Air</string>
+	</dict>
+	<key>Air Rest</key>
+	<dict>
+		<key>Move</key>
+		<string>Rest</string>
+		<key>Element</key>
+		<string>Air</string>
+	</dict>
+	<key>Water Attack</key>
+	<dict>
+		<key>Move</key>
+		<string>Attack</string>
+		<key>Element</key>
+		<string>Water</string>
+	</dict>
+	<key>Water Defense</key>
+	<dict>
+		<key>Move</key>
+		<string>Defense</string>
+		<key>Element</key>
+		<string>Water</string>
+	</dict>
+	<key>Water Rest</key>
+	<dict>
+		<key>Move</key>
+		<string>Rest</string>
+		<key>Element</key>
+		<string>Water</string>
+	</dict>
+	<key>Earth Attack</key>
+	<dict>
+		<key>Move</key>
+		<string>Attack</string>
+		<key>Element</key>
+		<string>Earth</string>
+	</dict>
+	<key>Earth Defense</key>
+	<dict>
+		<key>Move</key>
+		<string>Defense</string>
+		<key>Element</key>
+		<string>Earth</string>
+	</dict>
+	<key>Earth Rest</key>
+	<dict>
+		<key>Move</key>
+		<string>Rest</string>
+		<key>Element</key>
+		<string>Earth</string>
+	</dict>
+</dict>
+</plist>

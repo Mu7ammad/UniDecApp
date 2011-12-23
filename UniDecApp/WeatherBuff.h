@@ -10,5 +10,9 @@
 
 //affect weather
 @interface WeatherBuff : Buff
+{
+    NSString* weather;
 
+}
+-(id)init:(NSString*)Weather;
 @end

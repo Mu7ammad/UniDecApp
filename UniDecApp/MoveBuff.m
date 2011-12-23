@@ -10,4 +10,23 @@
 
 @implementation MoveBuff
 
+-(id)init:(NSString *)Move
+{
+
+    if (Move) {
+        
+    self = [super init];
+    
+    move = [NSString stringWithFormat:Move];
+    
+    return self;
+    }
+    
+    else
+    {
+        return nil;
+    
+    }
+}
+
 @end

@@ -10,5 +10,11 @@
 
 //affect turn
 @interface TurnBuff : Buff
+{
+    NSString* turn;
+
+}
+
+-(id)init:(NSString*)Turn;
 
 @end
