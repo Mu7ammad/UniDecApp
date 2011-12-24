@@ -29,4 +29,29 @@
     }
 }
 
+-(void)applyBuff:(Turn *)turn
+{
+    
+
+    if (move == @"Attack") 
+    {
+        turn.me.prob.suggestedMove =0;
+        
+        
+    }
+    else if (move == @"Defense")
+    {
+        turn.me.prob.suggestedMove =1;
+        
+    }
+    else if (move ==@"Rest")
+    {
+        turn.me.prob.suggestedMove =2;
+        
+    }
+    
+    
+
+}
+
 @end

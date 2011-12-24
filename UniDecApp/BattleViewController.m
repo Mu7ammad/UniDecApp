@@ -40,12 +40,20 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //init card panel and connect to UI
     cardPanel = [[CardPanel alloc]init];
-    
+        
     cardPanel.PanelView = CardPanelView;
     
     [cardPanel takeCardViews:[NSArray arrayWithObjects:card1,card2,card3,card4,card5,card6,card7, nil] and:SelectedCard];
     
+    //init turn and connect to UI 
+    turn = [[Turn alloc]init];
+    
+    turn.chargeMeter.myCharge = myCharge;
+    turn.chargeMeter.hisCharge = hisCharge;
+    turn.weather.currentWeather = currentWeather;
+        
 }
 
 - (void)viewDidUnload

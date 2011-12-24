@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Move.h"
+
 
 //connect to UI
 
 @interface ChargeMeter : NSObject
 {
-
-    int c, boundary;
+    int c , boundary;
 }
 
--(void) applyMoves:(Move*) move1 and:(Move*) move2;
+@property (weak, nonatomic)  UILabel *myCharge;
+@property (weak, nonatomic)  UILabel *hisCharge;
 
 @end

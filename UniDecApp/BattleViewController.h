@@ -14,19 +14,15 @@
 @interface BattleViewController : UIViewController
 
 {   
-    
     CardPanel* cardPanel;
     
     NSMutableArray* buffs;
-    
-    
-    
+      
     Turn* turn;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *BackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *CardPanelView;
-
 
 //to be replaced with proper UI elements
 @property (weak, nonatomic) IBOutlet UILabel *myCharge;
@@ -50,8 +46,6 @@
 - (IBAction)LeftSwipeAction:(id)sender;
 - (IBAction)TapAction:(id)sender;
 - (IBAction)UpSwipeSelectAction:(id)sender;
-
 - (IBAction)BackgroundTapAction:(id)sender;
-
 
 @end

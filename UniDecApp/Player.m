@@ -9,5 +9,49 @@
 #import "Player.h"
 
 @implementation Player
+@synthesize power, prob, target;
 
+-(Move *)makeMove
+{
+
+    Move* move; 
+    switch([prob decideMove])
+    {
+            case 0://attack
+    
+            move = [[AttackMove alloc]init];
+            move. magnitude = [power givePowerforMove:0];
+            
+            
+            break;
+            case 1://defense
+                
+            move = [[DefenseMove alloc]init];
+            move. magnitude = [power givePowerforMove:1];
+            
+            break;
+            
+            case 2://rest
+            move = [[RestMove alloc]init];
+            move. magnitude = [power givePowerforMove:2];
+            
+            break;
+    
+    }
+    
+    //reset power
+    power.ampMode =0;
+    
+    
+    //reset move prob
+    prob.mode =0;
+    
+                    
+            
+    
+    move.target =target;
+    
+    return move;
+
+}
 @end

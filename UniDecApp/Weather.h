@@ -18,4 +18,7 @@
 
 @property int seasonCounter;
 
+@property (weak, nonatomic) UILabel *currentWeather;
+
+
 @end

@@ -15,18 +15,12 @@
 #import "ChargeMeter.h"
 
 @interface Turn : NSObject
-{
-    
-    Player* me;
-    Player* him;
-    
-    Weather* weather;
-    
-    ChargeMeter* chargeMeter;
-    
-}
 
 
+@property (strong) Player* me;
+@property (strong) Player* him;
+@property (strong) Weather* weather;
+@property (strong) ChargeMeter* chargeMeter;
 
 -(void) executeTurn;
 

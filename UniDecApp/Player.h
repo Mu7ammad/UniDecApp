@@ -9,16 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "Power.h"
 #import "MoveProb.h"
-#import "Move.h"
+#import "AttackMove.h"
+#import "DefenseMove.h"
+#import "RestMove.h"
 
 // connect to UI (stats)
 
 @interface Player : NSObject
-{
-    Power* power;
-    MoveProb* prob;
 
-}
+@property bool target;
+@property (strong) Power* power;
+@property (strong) MoveProb* prob;
 
 -(Move*) makeMove;
 

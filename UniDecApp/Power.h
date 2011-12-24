@@ -15,6 +15,8 @@
 }
 
 @property int attackPower,defensePower,restPower;
-@property int attackElement, defenseElement, restElement;
+@property int ampMode;//amplification mode
+
+-(int) givePowerforMove:(int) move;
 
 @end

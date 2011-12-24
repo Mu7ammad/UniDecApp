@@ -20,7 +20,7 @@
 		3E40260814993DE70060EBE4 /* TurnBuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025EB14993DE70060EBE4 /* TurnBuff.m */; };
 		3E40260914993DE70060EBE4 /* Move.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025ED14993DE70060EBE4 /* Move.m */; };
 		3E40260A14993DE70060EBE4 /* AttackMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025EF14993DE70060EBE4 /* AttackMove.m */; };
-		3E40260B14993DE70060EBE4 /* DefendMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025F114993DE70060EBE4 /* DefendMove.m */; };
+		3E40260B14993DE70060EBE4 /* DefenseMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025F114993DE70060EBE4 /* DefenseMove.m */; };
 		3E40260C14993DE70060EBE4 /* RestMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025F314993DE70060EBE4 /* RestMove.m */; };
 		3E40260D14993DE70060EBE4 /* DestroyMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025F514993DE70060EBE4 /* DestroyMove.m */; };
 		3E40260E14993DE70060EBE4 /* ChargeMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025F714993DE70060EBE4 /* ChargeMeter.m */; };
@@ -82,8 +82,8 @@
 		3E4025ED14993DE70060EBE4 /* Move.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Move.m; sourceTree = "<group>"; };
 		3E4025EE14993DE70060EBE4 /* AttackMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttackMove.h; sourceTree = "<group>"; };
 		3E4025EF14993DE70060EBE4 /* AttackMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttackMove.m; sourceTree = "<group>"; };
-		3E4025F014993DE70060EBE4 /* DefendMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefendMove.h; sourceTree = "<group>"; };
-		3E4025F114993DE70060EBE4 /* DefendMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefendMove.m; sourceTree = "<group>"; };
+		3E4025F014993DE70060EBE4 /* DefenseMove.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DefenseMove.h; sourceTree = "<group>"; };
+		3E4025F114993DE70060EBE4 /* DefenseMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefenseMove.m; sourceTree = "<group>"; };
 		3E4025F214993DE70060EBE4 /* RestMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestMove.h; sourceTree = "<group>"; };
 		3E4025F314993DE70060EBE4 /* RestMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestMove.m; sourceTree = "<group>"; };
 		3E4025F414993DE70060EBE4 /* DestroyMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestroyMove.h; sourceTree = "<group>"; };
@@ -183,8 +183,8 @@
 				3E4025ED14993DE70060EBE4 /* Move.m */,
 				3E4025EE14993DE70060EBE4 /* AttackMove.h */,
 				3E4025EF14993DE70060EBE4 /* AttackMove.m */,
-				3E4025F014993DE70060EBE4 /* DefendMove.h */,
-				3E4025F114993DE70060EBE4 /* DefendMove.m */,
+				3E4025F014993DE70060EBE4 /* DefenseMove.h */,
+				3E4025F114993DE70060EBE4 /* DefenseMove.m */,
 				3E4025F214993DE70060EBE4 /* RestMove.h */,
 				3E4025F314993DE70060EBE4 /* RestMove.m */,
 				3E4025F414993DE70060EBE4 /* DestroyMove.h */,
@@ -436,7 +436,7 @@
 				3E40260814993DE70060EBE4 /* TurnBuff.m in Sources */,
 				3E40260914993DE70060EBE4 /* Move.m in Sources */,
 				3E40260A14993DE70060EBE4 /* AttackMove.m in Sources */,
-				3E40260B14993DE70060EBE4 /* DefendMove.m in Sources */,
+				3E40260B14993DE70060EBE4 /* DefenseMove.m in Sources */,
 				3E40260C14993DE70060EBE4 /* RestMove.m in Sources */,
 				3E40260D14993DE70060EBE4 /* DestroyMove.m in Sources */,
 				3E40260E14993DE70060EBE4 /* ChargeMeter.m in Sources */,

@@ -10,6 +10,10 @@
 
 @interface MoveProb : NSObject
 
-@property int adProb, drProb;
+@property int mode; // 
+@property int suggestedMove;//0 attack -- 1 defese -- 2 rest
+
+-(int) decideMove;
+
 
 @end

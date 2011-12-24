@@ -9,5 +9,12 @@
 #import "Move.h"
 
 @implementation Move
+@synthesize magnitude, target;
 
+-(void)applyMove:(ChargeMeter *)chargeMeter
+{
+
+
+
+}
 @end

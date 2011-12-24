@@ -9,5 +9,6 @@
 #import "ChargeMeter.h"
 
 @implementation ChargeMeter
+@synthesize myCharge, hisCharge;
 
 @end

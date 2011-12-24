@@ -10,6 +10,13 @@
 
 @implementation Weather
 
-@synthesize HotCold,WetDry, nextWetDry, nextHotCold, seasonCounter;
+@synthesize HotCold,WetDry, nextWetDry, nextHotCold, seasonCounter, currentWeather;
+
+
+-(void)takeIndicator:(UILabel *)Weather
+{
+    currentWeather = Weather;
+
+}
 
 @end

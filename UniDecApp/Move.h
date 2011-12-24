@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ChargeMeter.h"
 
 @interface Move : NSObject
-{
-    int magnitude;
-    
-    int player;
 
-}
+@property int magnitude;
+@property bool target;
+
+-(void) applyMove:(ChargeMeter*)chargeMeter;
+
 @end
