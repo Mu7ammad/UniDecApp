@@ -42,49 +42,49 @@
 		<key>Move</key>
 		<string>Rest</string>
 		<key>Element</key>
-		<string>Air</string>
+		<string></string>
 	</dict>
 	<key>Water Attack</key>
 	<dict>
 		<key>Move</key>
 		<string>Attack</string>
 		<key>Element</key>
-		<string>Water</string>
+		<string></string>
 	</dict>
 	<key>Water Defense</key>
 	<dict>
 		<key>Move</key>
 		<string>Defense</string>
 		<key>Element</key>
-		<string>Water</string>
+		<string></string>
 	</dict>
 	<key>Water Rest</key>
 	<dict>
 		<key>Move</key>
 		<string>Rest</string>
 		<key>Element</key>
-		<string>Water</string>
+		<string></string>
 	</dict>
 	<key>Earth Attack</key>
 	<dict>
 		<key>Move</key>
 		<string>Attack</string>
 		<key>Element</key>
-		<string>Earth</string>
+		<string></string>
 	</dict>
 	<key>Earth Defense</key>
 	<dict>
 		<key>Move</key>
 		<string>Defense</string>
 		<key>Element</key>
-		<string>Earth</string>
+		<string></string>
 	</dict>
 	<key>Earth Rest</key>
 	<dict>
 		<key>Move</key>
 		<string>Rest</string>
 		<key>Element</key>
-		<string>Earth</string>
+		<string></string>
 	</dict>
 </dict>
 </plist>

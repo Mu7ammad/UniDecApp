@@ -35,19 +35,36 @@
 
     if (move == @"Attack") 
     {
-        turn.me.prob.suggestedMove =0;
         
+        if (target) {
+        turn.him.prob.suggestedMove =0;    
+        }
+        else
+        {
+        turn.me.prob.suggestedMove =0;
+        }
         
     }
     else if (move == @"Defense")
     {
+        if (target) {
+        turn.him.prob.suggestedMove =1;
+        }
+        else
+        {        
         turn.me.prob.suggestedMove =1;
+        }
         
     }
     else if (move ==@"Rest")
     {
+        if (target) {
+        turn.him.prob.suggestedMove =2;    
+        }
+        else
+        {
         turn.me.prob.suggestedMove =2;
-        
+        }
     }
     
     

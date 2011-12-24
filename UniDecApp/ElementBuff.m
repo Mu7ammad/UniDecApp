@@ -28,4 +28,92 @@
     }
 }
 
+-(void)applyBuff:(Turn *)turn
+{
+
+    bool penalty= NO;
+    bool bonus= NO;
+    
+    if (element == @"Fire") {
+        
+        if (turn.weather.HotCold==1 && turn.weather.WetDry==0) {
+            penalty = YES;
+        }
+        else
+            if (turn.weather.HotCold ==0 && turn.weather.WetDry ==1) {
+                bonus =YES;
+            }
+    }
+    
+    
+    else
+        if (element == @"Water") {
+            
+            if (turn.weather.HotCold==0 && turn.weather.WetDry==1) {
+                penalty = YES;
+            }
+            else
+                if (turn.weather.HotCold ==1 && turn.weather.WetDry ==0) {
+                    bonus =YES;
+                }
+        }
+    
+                
+    else
+        if (element ==@"Air") {
+            
+            if (turn.weather.HotCold==0 && turn.weather.WetDry==1) {
+                penalty = YES;
+            }
+            else
+                if (turn.weather.HotCold ==1 && turn.weather.WetDry ==0) {
+                    bonus =YES;
+                }
+        }
+    
+    
+        
+    else
+    
+        if (element ==@"Earth") {
+            
+            if (turn.weather.HotCold==0 && turn.weather.WetDry==0) {
+                penalty = YES;
+            }
+            else
+                if (turn.weather.HotCold ==1 && turn.weather.WetDry ==1) {
+                    bonus =YES;
+                }
+        }
+    
+    
+    
+    //apply the buff accordingly
+    
+    if (penalty) {
+        if (target) {
+            turn.him.power.ampMode = 2;
+        }
+        else
+        {
+            turn.me.power.ampMode =2;
+        
+        }
+        
+        
+    }
+    else
+        if (bonus) {
+            
+            if (target) {
+                turn.him.power.ampMode =1;
+            }
+            else
+            {
+                turn.me.power.ampMode =1;
+            }
+            
+        }
+    
+}
 @end

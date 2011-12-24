@@ -11,7 +11,7 @@
 //connect to UI
 
 @interface Weather : NSObject
-    
+
 @property bool HotCold, WetDry;
 
 @property bool nextHotCold, nextWetDry;
@@ -20,5 +20,8 @@
 
 @property (weak, nonatomic) UILabel *currentWeather;
 
+-(void) presentWeatehr;
+
+-(void) changeSeason:(int) choice;
 
 @end
