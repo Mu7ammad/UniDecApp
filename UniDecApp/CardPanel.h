@@ -26,6 +26,7 @@
 @property bool PanelDown;
 @property (weak, nonatomic) UIView* PanelView;
 
+-(id)init:(NSArray*)cardNames from:(NSDictionary *)CardLibrary;
 //modify later
 -(void) takeCardViews: (NSArray*) cardViews and: (UIImageView*) selectedCardView;
 

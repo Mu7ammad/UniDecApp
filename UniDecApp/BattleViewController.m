@@ -40,9 +40,21 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    //init card panel and connect to UI
-    cardPanel = [[CardPanel alloc]init];
+    //load CardLibrary
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+	
+	NSString *finalPath = [path stringByAppendingPathComponent:@"CardLibrary.plist"];
+	
+	NSDictionary* CardLibrary = [NSDictionary dictionaryWithContentsOfFile:finalPath];
+    
+    // specify card names used in panel
+    NSArray* cardNames = [NSArray arrayWithObjects:@"Fire Attack", nil];
+    
+    //init card panel 
+    cardPanel = [[CardPanel alloc]init:cardNames from:CardLibrary];
         
+    
+    //take UIViews
     cardPanel.PanelView = CardPanelView;
     
     [cardPanel takeCardViews:[NSArray arrayWithObjects:card1,card2,card3,card4,card5,card6,card7, nil] and:SelectedCard];

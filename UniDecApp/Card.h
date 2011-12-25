@@ -14,12 +14,8 @@
 #import "TurnBuff.h"
 
 @interface Card : NSObject
-{
-    
-    NSDictionary* data;
-    
-}
 
+@property (strong) NSDictionary* data;
 @property (weak, nonatomic) UIImageView* view;
 @property (strong) NSString* name;
 
@@ -27,6 +23,7 @@
 -(NSArray*) generateBuffs;
 
 -(id)init:(NSString*)cardName from:(NSDictionary*) CardLibrary;
+-(void) copyCard:(Card*)card;
 
 -(void) ScaleUpToLeft;
 -(void) ScaleDownToLeft;

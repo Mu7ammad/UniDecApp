@@ -11,7 +11,7 @@
 
 @implementation Card
 
-@synthesize view, name;
+@synthesize view, name, data;
 
 
 -(id)init:(NSString*)cardName from:(NSDictionary*) CardLibrary
@@ -27,6 +27,17 @@
     
 }
 
+
+-(void)copyCard:(Card *)card
+{
+    
+    self.name = card.name;
+    
+    self.data = card.data;
+   
+    self.view.image = card.view.image;
+
+}
 
 
 -(NSArray *)generateBuffs

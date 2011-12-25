@@ -12,20 +12,20 @@
 @synthesize PanelDown;
 @synthesize PanelView;
 
--(id)init
+-(id)init:(NSArray *)cardNames from:(NSDictionary *)CardLibrary
 {
 
   self = [super init];
     
-    //initialize with dummy cards
-    Cards = [NSArray arrayWithObjects:[[Card alloc]init]
-             ,[[Card alloc]init]
-             ,[[Card alloc]init]
-             ,[[Card alloc]init]
-             ,[[Card alloc]init]
-             ,[[Card alloc]init]
-             ,[[Card alloc]init]
-             ,nil];
+    NSMutableArray* cards;
+    
+    for (NSString* name in cardNames) {
+        
+        Card* c;
+        [cards addObject:[c init:name from:CardLibrary]]; 
+    }
+    
+    Cards = cards;
     
     SelectedCard = [[Card alloc]init];
     
@@ -70,6 +70,43 @@
 
 }
 
+
+-(Card *)SelectCard
+{
+    
+    if (!PanelDown) {
+        
+        //copy
+        [SelectedCard copyCard:[Cards objectAtIndex:centerCard]];
+        
+        
+        
+        //animations
+        ((Card*)[Cards objectAtIndex:centerCard]).view.alpha =0;
+        
+        SelectedCard.view.alpha =1;
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            
+            
+            
+            CGPoint center = CGPointMake(384,300);                
+            
+            SelectedCard.view.center = center;
+            
+            
+        }];
+        
+        [self PushDown];
+        
+    }
+    
+    return SelectedCard;
+}
+
+
+
+//UI Animations
 
 -(void)PushRight
 {
@@ -236,36 +273,6 @@
     }];
 
 
-}
-
--(Card *)SelectCard
-{
-
-    if (!PanelDown) {
-        
-                   
-           SelectedCard.view.image = ((Card*)[Cards objectAtIndex:centerCard]).view.image;
-            
-            ((Card*)[Cards objectAtIndex:centerCard]).view.alpha =0;
-            
-            SelectedCard.view.alpha =1;
-            
-            [UIView animateWithDuration:0.5 animations:^{
-                
-                
-                
-                CGPoint center = CGPointMake(384,300);                
-                                
-                SelectedCard.view.center = center;
-                
-                
-            }];
-            
-            [self PushDown];
-            
-        }
-
-    return SelectedCard;
 }
 
 @end
