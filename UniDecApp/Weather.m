@@ -52,33 +52,37 @@
     switch (choice) {
             
             case 1://Spring
-            HotCold =0; WetDry=0;
+            nextHotCold =0; nextWetDry=0;
             break;
             case 2://Winter
-            HotCold=1; WetDry=0;
+            nextHotCold=1; nextWetDry=0;
             break;
             case 3://Summer
-            HotCold=0; WetDry=1;
+            nextHotCold=0; nextWetDry=1;
             break;
             case 4://Autmn
-            HotCold=1; WetDry=1;
+            nextHotCold=1; nextWetDry=1;
             break;
+            case 5://Toggle
+            nextHotCold = ! HotCold;
+            nextWetDry = ! WetDry;
             
+            break;
             
         default://random
             rand = arc4random()%4;
             switch (rand) {
                 case 0:
-                    HotCold =0; WetDry=0;
+                    nextHotCold =0; nextWetDry=0;
                     break;
                 case 1:
-                    HotCold =1; WetDry =0;
+                    nextHotCold =1; nextWetDry =0;
                     break;
                 case 2:
-                    HotCold =0; WetDry =1;
+                    nextHotCold =0; nextWetDry =1;
                     break;
                 case 3:
-                    HotCold=1; WetDry=1;
+                    nextHotCold=1; nextWetDry=1;
                     break;
                 default:
                     break;
@@ -86,8 +90,9 @@
             
             break;
     }
+    
+    seasonCounter =0;
 
-    [self presentWeatehr];
 }
 
 @end
