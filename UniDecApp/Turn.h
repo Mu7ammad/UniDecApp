@@ -8,28 +8,30 @@
 
 #import <Foundation/Foundation.h>
 
-#import "Move.h"
 
+#import "Move.h"
 #import "Player.h"
 #import "Weather.h"
 #import "ChargeMeter.h"
 
+
 @interface Turn : NSObject
 
 
-@property (strong) Player* me;
-@property (strong) Player* him;
+@property (strong) Player* myPlayer;
+@property (strong) Player* hisPlayer;
 @property (strong) Weather* weather;
 @property (strong) ChargeMeter* chargeMeter;
 
--(void) executeTurn;
+@property (strong) Move* myMove; 
 
--(void) executePhase1;
+@property (strong) Move* hisMove;
 
--(void) executePhase2;
+@property int turnNo;
 
--(void) executePhase3;
+//makes my and his moves ready
+-(void) evaluateTurn;
 
--(void) executePhase4;
+
 
 @end

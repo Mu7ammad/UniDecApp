@@ -66,6 +66,43 @@
     turn.chargeMeter.hisCharge = hisCharge;
     turn.weather.currentWeather = currentWeather;
         
+    if (initiator) {
+    
+        [self playFirstTurn];
+    }
+    else
+    {
+      
+       [self   playTurn];
+      
+    }
+    
+}
+
+
+-(void) playFirstTurn
+{
+
+
+}
+
+-(void)playTurn
+{
+    
+    
+    
+    
+    
+    
+    //buff the turn
+    for (Buff* buff in buffs) {
+        [buff applyBuff:turn];
+    }
+
+    
+
+
+
 }
 
 - (void)viewDidUnload

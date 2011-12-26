@@ -9,20 +9,27 @@
 #import "Turn.h"
 
 @implementation Turn
-@synthesize me, him, weather, chargeMeter;
+@synthesize myPlayer, hisPlayer, weather, chargeMeter, myMove, hisMove, turnNo;
 
 
 -(id)init
 {
     self = [super init];
     
-    me = [[Player alloc]init];
-    him = [[Player alloc]init];
+    myPlayer = [[Player alloc]init];
+    hisPlayer = [[Player alloc]init];
     
     weather = [[Weather alloc]init];
     
     chargeMeter = [[ChargeMeter alloc]init];
     
     return self;
+}
+
+-(void)evaluateTurn;
+{
+    
+    //the turn is buffed, generate the moves
+
 }
 @end

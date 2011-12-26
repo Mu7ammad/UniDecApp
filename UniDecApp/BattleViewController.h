@@ -19,6 +19,11 @@
     NSMutableArray* buffs;
       
     Turn* turn;
+        
+    bool end;
+    bool myTurn;
+    
+    bool initiator;//wheather I'm the one who initiated the Battle
 }
 
 @property (weak, nonatomic) IBOutlet UIView *BackgroundView;
@@ -41,6 +46,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *SelectedCard;
 
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *UpSwipeSelectGest;
+
+
+-(void) playTurn;
+-(void) playFirstTurn;
 
 - (IBAction)RightSwipeAction:(id)sender;
 - (IBAction)LeftSwipeAction:(id)sender;

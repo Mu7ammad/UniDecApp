@@ -92,11 +92,11 @@
     
     if (penalty) {
         if (target) {
-            turn.him.power.ampMode = 2;
+            turn.hisPlayer.power.ampMode = 2;
         }
         else
         {
-            turn.me.power.ampMode =2;
+            turn.myPlayer.power.ampMode =2;
         
         }
         
@@ -106,11 +106,11 @@
         if (bonus) {
             
             if (target) {
-                turn.him.power.ampMode =1;
+                turn.hisPlayer.power.ampMode =1;
             }
             else
             {
-                turn.me.power.ampMode =1;
+                turn.myPlayer.power.ampMode =1;
             }
             
         }
