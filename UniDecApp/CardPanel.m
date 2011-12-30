@@ -17,12 +17,12 @@
 
   self = [super init];
     
-    NSMutableArray* cards;
-    
+    NSMutableArray* cards = [[NSMutableArray alloc]init];
+        
     for (NSString* name in cardNames) {
         
-        Card* c;
-        [cards addObject:[c init:name from:CardLibrary]]; 
+        
+        [cards addObject:[[Card alloc] init:name from:CardLibrary]]; 
     }
     
     Cards = cards;

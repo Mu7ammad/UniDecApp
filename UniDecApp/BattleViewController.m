@@ -48,7 +48,7 @@
 	NSDictionary* CardLibrary = [NSDictionary dictionaryWithContentsOfFile:finalPath];
     
     // specify card names used in panel
-    NSArray* cardNames = [NSArray arrayWithObjects:@"Fire Attack", nil];
+    NSArray* cardNames = [NSArray arrayWithObjects:@"Fire Attack",@"Fire Defense", @"Fire Rest",@"Water Attack",@"Water Defense",@"Water Rest",@"Air Attack", nil];
     
     //init card panel 
     cardPanel = [[CardPanel alloc]init:cardNames from:CardLibrary];

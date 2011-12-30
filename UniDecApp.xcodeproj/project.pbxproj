@@ -30,6 +30,7 @@
 		3E4026191499410E0060EBE4 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4026181499410E0060EBE4 /* Card.m */; };
 		3EAFBF7E1499875C009359F5 /* swipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAFBF7D1499875C009359F5 /* swipe.png */; };
 		3ED22182149939450003C2B4 /* card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3ED22181149939450003C2B4 /* card.jpg */; };
+		3EDD741D14ADF3F200B9787B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDD741B14ADF3F200B9787B /* HomeViewController.m */; };
 		3EEF232A14981248002CEC7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEF232914981248002CEC7F /* UIKit.framework */; };
 		3EEF232C14981248002CEC7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEF232B14981248002CEC7F /* Foundation.framework */; };
 		3EEF232E14981248002CEC7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEF232D14981248002CEC7F /* CoreGraphics.framework */; };
@@ -100,6 +101,8 @@
 		3E4026181499410E0060EBE4 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		3EAFBF7D1499875C009359F5 /* swipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe.png; sourceTree = "<group>"; };
 		3ED22181149939450003C2B4 /* card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card.jpg; sourceTree = "<group>"; };
+		3EDD741A14ADF3F200B9787B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		3EDD741B14ADF3F200B9787B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		3EEF232514981248002CEC7F /* UniDecApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniDecApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEF232914981248002CEC7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3EEF232B14981248002CEC7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -273,6 +276,8 @@
 				3EEF233E14981248002CEC7F /* MainStoryboard_iPad.storyboard */,
 				3ED22181149939450003C2B4 /* card.jpg */,
 				3EAFBF7D1499875C009359F5 /* swipe.png */,
+				3EDD741A14ADF3F200B9787B /* HomeViewController.h */,
+				3EDD741B14ADF3F200B9787B /* HomeViewController.m */,
 				3EEF234114981248002CEC7F /* BattleViewController.h */,
 				3EEF234214981248002CEC7F /* BattleViewController.m */,
 				3ED2218314993B640003C2B4 /* Core */,
@@ -445,6 +450,7 @@
 				3E40261114993DE70060EBE4 /* Turn.m in Sources */,
 				3E4026191499410E0060EBE4 /* Card.m in Sources */,
 				3E23C3AE14A52D760009E4FA /* ElementBuff.m in Sources */,
+				3EDD741D14ADF3F200B9787B /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
