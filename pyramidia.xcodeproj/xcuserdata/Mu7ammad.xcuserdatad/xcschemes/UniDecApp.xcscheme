@@ -15,8 +15,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3EEF232414981248002CEC7F"
                BuildableName = "UniDecApp.app"
-               BlueprintName = "UniDecApp"
-               ReferencedContainer = "container:UniDecApp.xcodeproj">
+               BlueprintName = "pyramidia"
+               ReferencedContainer = "container:pyramidia.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,8 +33,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3EEF234814981249002CEC7F"
                BuildableName = "UniDecAppTests.octest"
-               BlueprintName = "UniDecAppTests"
-               ReferencedContainer = "container:UniDecApp.xcodeproj">
+               BlueprintName = "pyramidiaTests"
+               ReferencedContainer = "container:pyramidia.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,8 +43,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EEF232414981248002CEC7F"
             BuildableName = "UniDecApp.app"
-            BlueprintName = "UniDecApp"
-            ReferencedContainer = "container:UniDecApp.xcodeproj">
+            BlueprintName = "pyramidia"
+            ReferencedContainer = "container:pyramidia.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,8 +61,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EEF232414981248002CEC7F"
             BuildableName = "UniDecApp.app"
-            BlueprintName = "UniDecApp"
-            ReferencedContainer = "container:UniDecApp.xcodeproj">
+            BlueprintName = "pyramidia"
+            ReferencedContainer = "container:pyramidia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,8 +79,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EEF232414981248002CEC7F"
             BuildableName = "UniDecApp.app"
-            BlueprintName = "UniDecApp"
-            ReferencedContainer = "container:UniDecApp.xcodeproj">
+            BlueprintName = "pyramidia"
+            ReferencedContainer = "container:pyramidia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

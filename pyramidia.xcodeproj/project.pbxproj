@@ -31,6 +31,7 @@
 		3EAFBF7E1499875C009359F5 /* swipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAFBF7D1499875C009359F5 /* swipe.png */; };
 		3ED22182149939450003C2B4 /* card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3ED22181149939450003C2B4 /* card.jpg */; };
 		3EDD741D14ADF3F200B9787B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDD741B14ADF3F200B9787B /* HomeViewController.m */; };
+		3EE8E6F414B1013B001BF835 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE8E6F314B1013B001BF835 /* GameKit.framework */; };
 		3EEF232A14981248002CEC7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEF232914981248002CEC7F /* UIKit.framework */; };
 		3EEF232C14981248002CEC7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEF232B14981248002CEC7F /* Foundation.framework */; };
 		3EEF232E14981248002CEC7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEF232D14981248002CEC7F /* CoreGraphics.framework */; };
@@ -103,23 +104,24 @@
 		3ED22181149939450003C2B4 /* card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card.jpg; sourceTree = "<group>"; };
 		3EDD741A14ADF3F200B9787B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		3EDD741B14ADF3F200B9787B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		3EEF232514981248002CEC7F /* UniDecApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniDecApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE8E6F314B1013B001BF835 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		3EEF232514981248002CEC7F /* pYramidia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pYramidia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEF232914981248002CEC7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3EEF232B14981248002CEC7F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3EEF232D14981248002CEC7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3EEF233114981248002CEC7F /* UniDecApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UniDecApp-Info.plist"; sourceTree = "<group>"; };
+		3EEF233114981248002CEC7F /* pyramidia-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pyramidia-Info.plist"; sourceTree = "<group>"; };
 		3EEF233314981248002CEC7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3EEF233514981248002CEC7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3EEF233714981248002CEC7F /* UniDecApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UniDecApp-Prefix.pch"; sourceTree = "<group>"; };
+		3EEF233714981248002CEC7F /* pyramidia-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pyramidia-Prefix.pch"; sourceTree = "<group>"; };
 		3EEF233814981248002CEC7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3EEF233914981248002CEC7F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3EEF233C14981248002CEC7F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		3EEF233F14981248002CEC7F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		3EEF234114981248002CEC7F /* BattleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleViewController.h; sourceTree = "<group>"; };
 		3EEF234214981248002CEC7F /* BattleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BattleViewController.m; sourceTree = "<group>"; };
-		3EEF234914981249002CEC7F /* UniDecAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniDecAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EEF234914981249002CEC7F /* pyramidiaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pyramidiaTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEF234A14981249002CEC7F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		3EEF235214981249002CEC7F /* UniDecAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UniDecAppTests-Info.plist"; sourceTree = "<group>"; };
+		3EEF235214981249002CEC7F /* pyramidiaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pyramidiaTests-Info.plist"; sourceTree = "<group>"; };
 		3EEF235414981249002CEC7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3EEF235614981249002CEC7F /* UniDecAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniDecAppTests.h; sourceTree = "<group>"; };
 		3EEF235714981249002CEC7F /* UniDecAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UniDecAppTests.m; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				3EEF232A14981248002CEC7F /* UIKit.framework in Frameworks */,
 				3EEF232C14981248002CEC7F /* Foundation.framework in Frameworks */,
 				3EEF232E14981248002CEC7F /* CoreGraphics.framework in Frameworks */,
+				3EE8E6F414B1013B001BF835 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,8 +253,8 @@
 		3EEF232614981248002CEC7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EEF232514981248002CEC7F /* UniDecApp.app */,
-				3EEF234914981249002CEC7F /* UniDecAppTests.octest */,
+				3EEF232514981248002CEC7F /* pYramidia.app */,
+				3EEF234914981249002CEC7F /* pyramidiaTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 		3EEF232814981248002CEC7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3EE8E6F314B1013B001BF835 /* GameKit.framework */,
 				3EEF232914981248002CEC7F /* UIKit.framework */,
 				3EEF232B14981248002CEC7F /* Foundation.framework */,
 				3EEF232D14981248002CEC7F /* CoreGraphics.framework */,
@@ -289,10 +293,10 @@
 		3EEF233014981248002CEC7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3EEF233114981248002CEC7F /* UniDecApp-Info.plist */,
+				3EEF233114981248002CEC7F /* pyramidia-Info.plist */,
 				3EEF233214981248002CEC7F /* InfoPlist.strings */,
 				3EEF233514981248002CEC7F /* main.m */,
-				3EEF233714981248002CEC7F /* UniDecApp-Prefix.pch */,
+				3EEF233714981248002CEC7F /* pyramidia-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -310,7 +314,7 @@
 		3EEF235114981249002CEC7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3EEF235214981249002CEC7F /* UniDecAppTests-Info.plist */,
+				3EEF235214981249002CEC7F /* pyramidiaTests-Info.plist */,
 				3EEF235314981249002CEC7F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -319,9 +323,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3EEF232414981248002CEC7F /* UniDecApp */ = {
+		3EEF232414981248002CEC7F /* pyramidia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EEF235B14981249002CEC7F /* Build configuration list for PBXNativeTarget "UniDecApp" */;
+			buildConfigurationList = 3EEF235B14981249002CEC7F /* Build configuration list for PBXNativeTarget "pyramidia" */;
 			buildPhases = (
 				3EEF232114981248002CEC7F /* Sources */,
 				3EEF232214981248002CEC7F /* Frameworks */,
@@ -331,14 +335,14 @@
 			);
 			dependencies = (
 			);
-			name = UniDecApp;
+			name = pyramidia;
 			productName = UniDecApp;
-			productReference = 3EEF232514981248002CEC7F /* UniDecApp.app */;
+			productReference = 3EEF232514981248002CEC7F /* pYramidia.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3EEF234814981249002CEC7F /* UniDecAppTests */ = {
+		3EEF234814981249002CEC7F /* pyramidiaTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EEF235E14981249002CEC7F /* Build configuration list for PBXNativeTarget "UniDecAppTests" */;
+			buildConfigurationList = 3EEF235E14981249002CEC7F /* Build configuration list for PBXNativeTarget "pyramidiaTests" */;
 			buildPhases = (
 				3EEF234414981249002CEC7F /* Sources */,
 				3EEF234514981249002CEC7F /* Frameworks */,
@@ -350,9 +354,9 @@
 			dependencies = (
 				3EEF234F14981249002CEC7F /* PBXTargetDependency */,
 			);
-			name = UniDecAppTests;
+			name = pyramidiaTests;
 			productName = UniDecAppTests;
-			productReference = 3EEF234914981249002CEC7F /* UniDecAppTests.octest */;
+			productReference = 3EEF234914981249002CEC7F /* pyramidiaTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -364,7 +368,7 @@
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = Pirates;
 			};
-			buildConfigurationList = 3EEF231F14981248002CEC7F /* Build configuration list for PBXProject "UniDecApp" */;
+			buildConfigurationList = 3EEF231F14981248002CEC7F /* Build configuration list for PBXProject "pyramidia" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -376,8 +380,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3EEF232414981248002CEC7F /* UniDecApp */,
-				3EEF234814981249002CEC7F /* UniDecAppTests */,
+				3EEF232414981248002CEC7F /* pyramidia */,
+				3EEF234814981249002CEC7F /* pyramidiaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -467,7 +471,7 @@
 /* Begin PBXTargetDependency section */
 		3EEF234F14981249002CEC7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3EEF232414981248002CEC7F /* UniDecApp */;
+			target = 3EEF232414981248002CEC7F /* pyramidia */;
 			targetProxy = 3EEF234E14981249002CEC7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -559,9 +563,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UniDecApp/UniDecApp-Prefix.pch";
-				INFOPLIST_FILE = "UniDecApp/UniDecApp-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "UniDecApp/pyramidia-Prefix.pch";
+				INFOPLIST_FILE = "UniDecApp/pyramidia-Info.plist";
+				PRODUCT_NAME = pYramidia;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -570,9 +574,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UniDecApp/UniDecApp-Prefix.pch";
-				INFOPLIST_FILE = "UniDecApp/UniDecApp-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "UniDecApp/pyramidia-Prefix.pch";
+				INFOPLIST_FILE = "UniDecApp/pyramidia-Info.plist";
+				PRODUCT_NAME = pYramidia;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -587,8 +591,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UniDecApp/UniDecApp-Prefix.pch";
-				INFOPLIST_FILE = "UniDecAppTests/UniDecAppTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "UniDecAppTests/pyramidiaTests-Info.plist";
+				PRODUCT_NAME = pyramidiaTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -604,8 +608,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UniDecApp/UniDecApp-Prefix.pch";
-				INFOPLIST_FILE = "UniDecAppTests/UniDecAppTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "UniDecAppTests/pyramidiaTests-Info.plist";
+				PRODUCT_NAME = pyramidiaTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -614,7 +618,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3EEF231F14981248002CEC7F /* Build configuration list for PBXProject "UniDecApp" */ = {
+		3EEF231F14981248002CEC7F /* Build configuration list for PBXProject "pyramidia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EEF235914981249002CEC7F /* Debug */,
@@ -623,7 +627,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3EEF235B14981249002CEC7F /* Build configuration list for PBXNativeTarget "UniDecApp" */ = {
+		3EEF235B14981249002CEC7F /* Build configuration list for PBXNativeTarget "pyramidia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EEF235C14981249002CEC7F /* Debug */,
@@ -632,7 +636,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3EEF235E14981249002CEC7F /* Build configuration list for PBXNativeTarget "UniDecAppTests" */ = {
+		3EEF235E14981249002CEC7F /* Build configuration list for PBXNativeTarget "pyramidiaTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EEF235F14981249002CEC7F /* Debug */,

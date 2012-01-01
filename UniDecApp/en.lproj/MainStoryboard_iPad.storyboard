@@ -98,7 +98,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="DuX-wz-dBh">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="myCharge" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="DuX-wz-dBh">
                                 <rect key="frame" x="444" y="39" width="100" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.98789574369957123" blue="0.7500190526997953" alpha="1" colorSpace="calibratedRGB"/>
@@ -106,7 +106,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="18" id="viV-TL-YnZ">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="hisCharge" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="18" id="viV-TL-YnZ">
                                 <rect key="frame" x="569" y="39" width="107" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.75032409362769525" green="0.96450122273810868" blue="1" alpha="1" colorSpace="calibratedRGB"/>

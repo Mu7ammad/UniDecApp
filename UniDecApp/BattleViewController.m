@@ -53,18 +53,28 @@
     //init card panel 
     cardPanel = [[CardPanel alloc]init:cardNames from:CardLibrary];
         
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        // The device is an iPad 
+        
+        //take UIViews
+        cardPanel.PanelView = CardPanelView;
+        
+        [cardPanel takeCardViews:[NSArray arrayWithObjects:card1,card2,card3,card4,card5,card6,card7, nil] and:SelectedCard];
+        
+        //init turn and connect to UI 
+        turn = [[Turn alloc]init];
+        
+        turn.chargeMeter.myCharge = myCharge;
+        turn.chargeMeter.hisCharge = hisCharge;
+        turn.weather.currentWeather = currentWeather;
+        
+    }
+    else {
+        // The device is an iPhone or iPod touch.
+        
+    }
     
-    //take UIViews
-    cardPanel.PanelView = CardPanelView;
     
-    [cardPanel takeCardViews:[NSArray arrayWithObjects:card1,card2,card3,card4,card5,card6,card7, nil] and:SelectedCard];
-    
-    //init turn and connect to UI 
-    turn = [[Turn alloc]init];
-    
-    turn.chargeMeter.myCharge = myCharge;
-    turn.chargeMeter.hisCharge = hisCharge;
-    turn.weather.currentWeather = currentWeather;
         
     if (initiator) {
     
