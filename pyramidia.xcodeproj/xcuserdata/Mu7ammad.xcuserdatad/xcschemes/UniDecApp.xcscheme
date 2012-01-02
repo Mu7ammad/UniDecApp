@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3EEF232414981248002CEC7F"
-               BuildableName = "UniDecApp.app"
+               BuildableName = "pYramidia.app"
                BlueprintName = "pyramidia"
                ReferencedContainer = "container:pyramidia.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3EEF234814981249002CEC7F"
-               BuildableName = "UniDecAppTests.octest"
+               BuildableName = "pyramidiaTests.octest"
                BlueprintName = "pyramidiaTests"
                ReferencedContainer = "container:pyramidia.xcodeproj">
             </BuildableReference>
@@ -42,7 +42,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EEF232414981248002CEC7F"
-            BuildableName = "UniDecApp.app"
+            BuildableName = "pYramidia.app"
             BlueprintName = "pyramidia"
             ReferencedContainer = "container:pyramidia.xcodeproj">
          </BuildableReference>
@@ -60,7 +60,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EEF232414981248002CEC7F"
-            BuildableName = "UniDecApp.app"
+            BuildableName = "pYramidia.app"
             BlueprintName = "pyramidia"
             ReferencedContainer = "container:pyramidia.xcodeproj">
          </BuildableReference>
@@ -78,7 +78,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3EEF232414981248002CEC7F"
-            BuildableName = "UniDecApp.app"
+            BuildableName = "pYramidia.app"
             BlueprintName = "pyramidia"
             ReferencedContainer = "container:pyramidia.xcodeproj">
          </BuildableReference>

@@ -28,6 +28,7 @@
 		3E40261014993DE70060EBE4 /* CardPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025FB14993DE70060EBE4 /* CardPanel.m */; };
 		3E40261114993DE70060EBE4 /* Turn.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4025FD14993DE70060EBE4 /* Turn.m */; };
 		3E4026191499410E0060EBE4 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4026181499410E0060EBE4 /* Card.m */; };
+		3E417CBE14B24196003F379E /* GCTurnBasedMatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E417CBD14B24196003F379E /* GCTurnBasedMatchHelper.m */; };
 		3EAFBF7E1499875C009359F5 /* swipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAFBF7D1499875C009359F5 /* swipe.png */; };
 		3ED22182149939450003C2B4 /* card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3ED22181149939450003C2B4 /* card.jpg */; };
 		3EDD741D14ADF3F200B9787B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDD741B14ADF3F200B9787B /* HomeViewController.m */; };
@@ -100,6 +101,8 @@
 		3E4025FD14993DE70060EBE4 /* Turn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Turn.m; sourceTree = "<group>"; };
 		3E4026171499410E0060EBE4 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		3E4026181499410E0060EBE4 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		3E417CBC14B24196003F379E /* GCTurnBasedMatchHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCTurnBasedMatchHelper.h; sourceTree = "<group>"; };
+		3E417CBD14B24196003F379E /* GCTurnBasedMatchHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCTurnBasedMatchHelper.m; sourceTree = "<group>"; };
 		3EAFBF7D1499875C009359F5 /* swipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe.png; sourceTree = "<group>"; };
 		3ED22181149939450003C2B4 /* card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card.jpg; sourceTree = "<group>"; };
 		3EDD741A14ADF3F200B9787B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -276,6 +279,8 @@
 			children = (
 				3EEF233814981248002CEC7F /* AppDelegate.h */,
 				3EEF233914981248002CEC7F /* AppDelegate.m */,
+				3E417CBC14B24196003F379E /* GCTurnBasedMatchHelper.h */,
+				3E417CBD14B24196003F379E /* GCTurnBasedMatchHelper.m */,
 				3EEF233B14981248002CEC7F /* MainStoryboard_iPhone.storyboard */,
 				3EEF233E14981248002CEC7F /* MainStoryboard_iPad.storyboard */,
 				3ED22181149939450003C2B4 /* card.jpg */,
@@ -455,6 +460,7 @@
 				3E4026191499410E0060EBE4 /* Card.m in Sources */,
 				3E23C3AE14A52D760009E4FA /* ElementBuff.m in Sources */,
 				3EDD741D14ADF3F200B9787B /* HomeViewController.m in Sources */,
+				3E417CBE14B24196003F379E /* GCTurnBasedMatchHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

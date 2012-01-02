@@ -7,80 +7,21 @@
 //
 
 #import "AppDelegate.h"
-
+#import "GCTurnBasedMatchHelper.h"
 
 @implementation AppDelegate
 
-@synthesize currentPlayerID, 
-gameCenterAuthenticationComplete;
-
 
 @synthesize window = _window;
-
-
-// Check for the availability of Game Center API. 
--(BOOL) isGameCenterAPIAvailable
-{
-    // Check for presence of GKLocalPlayer API.
-    Class gcClass = (NSClassFromString(@"GKLocalPlayer"));
-    
-    // The device must be running running iOS 4.1 or later.
-    NSString *reqSysVer = @"4.1";
-    NSString *currSysVer = [[UIDevice currentDevice] systemVersion];
-    BOOL osVersionSupported = ([currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending);
-    
-    return (gcClass && osVersionSupported); 
-}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     
+    //Game Center Authentication
+    [[GCTurnBasedMatchHelper sharedInstance] authenticateLocalUser];
     
-    self.gameCenterAuthenticationComplete = NO;
-    
-    if (![self isGameCenterAPIAvailable]) {
-        // Game Center is not available. 
-        self.gameCenterAuthenticationComplete = NO;
-    } else {
-        
-        GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
-        
-        /*
-         The authenticateWithCompletionHandler method is like all completion handler methods and runs a block
-         of code after completing its task. The difference with this method is that it does not release the 
-         completion handler after calling it. Whenever your application returns to the foreground after 
-         running in the background, Game Kit re-authenticates the user and calls the retained completion 
-         handler. This means the authenticateWithCompletionHandler: method only needs to be called once each 
-         time your application is launched. This is the reason the sample authenticates in the application 
-         delegate's application:didFinishLaunchingWithOptions: method instead of in the view controller's 
-         viewDidLoad method.
-         
-         Remember this call returns immediately, before the user is authenticated. This is because it uses 
-         Grand Central Dispatch to call the block asynchronously once authentication completes.
-         */
-        [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error) {
-            // If there is an error, do not assume local player is not authenticated. 
-            if (localPlayer.isAuthenticated) {
-                
-                // Enable Game Center Functionality 
-                self.gameCenterAuthenticationComplete = YES;
-                
-                if (! self.currentPlayerID || ! [self.currentPlayerID isEqualToString:localPlayer.playerID]) {
-                    
-                    // Current playerID has changed. Create/Load a game state around the new user. 
-                    self.currentPlayerID = localPlayer.playerID;
-                    
-                    // Load game instance for new current player, if none exists create a new.
-                }
-            } else {     
-                // No user is logged into Game Center, run without Game Center support or user interface. 
-                self.gameCenterAuthenticationComplete = NO;
-            }
-        }];
-    }    
-
     return YES;
 }
 							
