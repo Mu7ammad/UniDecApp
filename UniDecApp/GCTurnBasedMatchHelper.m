@@ -10,7 +10,7 @@
 
 @implementation GCTurnBasedMatchHelper
 
-@synthesize gameCenterAvailable;
+@synthesize gameCenterAvailable, currentMatch;
 
 #pragma mark Initialization
 
@@ -81,5 +81,61 @@ static GCTurnBasedMatchHelper *sharedHelper = nil;
         
     }
 }
+
+-(void)findMatchWithMinPlayers:(int)minPlayers maxPlayers:(int)maxPlayers viewController:(UIViewController *)viewController
+{
+    if (!gameCenterAvailable) {
+        return;
+    }
+    
+    presentingViewController = viewController;
+    
+    GKMatchRequest *request = [[GKMatchRequest alloc]init];
+    request.minPlayers = minPlayers;
+    request.maxPlayers = maxPlayers;
+    
+    GKTurnBasedMatchmakerViewController *mmvc = [[GKTurnBasedMatchmakerViewController alloc]initWithMatchRequest:request];
+    mmvc.turnBasedMatchmakerDelegate = self;
+    mmvc.showExistingMatches = YES;
+    
+    [presentingViewController presentModalViewController:mmvc animated:YES];
+    
+}
+
+#pragma mark GKTurnBasedMatchmakerViewControllerDelegate
+
+//match found
+-(void) turnBasedMatchmakerViewController:(GKTurnBasedMatchmakerViewController *)viewController didFindMatch:(GKTurnBasedMatch *)match{
+    
+    [presentingViewController dismissModalViewControllerAnimated:YES];
+    NSLog(@"did find match, %@",match);
+    
+    self.currentMatch = match;
+}
+
+//cancel
+-(void)turnBasedMatchmakerViewControllerWasCancelled:(GKTurnBasedMatchmakerViewController *)viewController
+{
+    [presentingViewController dismissModalViewControllerAnimated:YES];
+    
+    NSLog(@"has cancelled");
+    
+}
+
+//error
+-(void)turnBasedMatchmakerViewController:(GKTurnBasedMatchmakerViewController *)viewController didFailWithError:(NSError *)error{
+    
+    [presentingViewController dismissModalViewControllerAnimated:YES];
+    
+    NSLog(@"Error finding match: %@", error.localizedDescription);
+    
+}
+
+//quit
+-(void)turnBasedMatchmakerViewController:(GKTurnBasedMatchmakerViewController *)viewController playerQuitForMatch:(GKTurnBasedMatch *)match{
+    
+    NSLog(@"player quit for match, %@, %@", match, match.currentParticipant);
+}
+
 
 @end

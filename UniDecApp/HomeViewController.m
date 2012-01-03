@@ -7,7 +7,6 @@
 //
 
 #import "HomeViewController.h"
-
 @implementation HomeViewController
 
 
@@ -50,4 +49,18 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(void)presentGCTurnViewController{
+    
+    [[GCTurnBasedMatchHelper sharedInstance] findMatchWithMinPlayers:2 maxPlayers:2 viewController:self];
+}
+
+- (IBAction)presentGCTurnViewController_iPod:(id)sender {
+
+    [self presentGCTurnViewController];
+}
+
+- (IBAction)presentGCTurnViewController_iPad:(id)sender {
+
+    [self presentGCTurnViewController];
+}
 @end
