@@ -40,6 +40,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    [GCTurnBasedMatchHelper sharedInstance].delegate = self;
+    
+    
     //load CardLibrary
     NSString *path = [[NSBundle mainBundle] bundlePath];
 	
@@ -73,28 +76,9 @@
         // The device is an iPhone or iPod touch.
         
     }
-    
-    
-        
-    if (initiator) {
-    
-        [self playFirstTurn];
-    }
-    else
-    {
-      
-       [self   playTurn];
-      
-    }
-    
-}
-
-
--(void) playFirstTurn
-{
-
 
 }
+
 
 -(void)playTurn
 {
@@ -186,7 +170,6 @@
 
 - (IBAction)UpSwipeSelectAction:(id)sender {
     
-   
         
         int x = [UpSwipeSelectGest locationInView:CardPanelView].x;
         
@@ -197,12 +180,78 @@
             
         }
     
-    
 }
 
 - (IBAction)BackgroundTapAction:(id)sender {
     
     [cardPanel PushDown];
 }
+
+-(void)sendTurn{
+    
+    //send NSData object of the turn
+    
+    //make sure you don't send the turn to a participant who had quit 
+    
+}
+
+#pragma mark - GCTurnBasedMatchHelperDelegate
+
+-(void) enterNewGame:(GKTurnBasedMatch *)match{
+    
+    NSLog(@"Entering new game...");
+    
+    // prepare new game
+    
+    //...
+}
+
+
+-(void)layoutMatch:(GKTurnBasedMatch *)match{
+
+    // view game while not my turn
+    
+    NSLog(@"Viewing match where it's not my turn ...");
+    NSString *statusString;
+    
+    if (match.status == GKTurnBasedMatchStatusEnded) {
+        statusString = @"Match Ended";
+    } else {
+        
+        int playerNum = [match.participants indexOfObject:match.currentParticipant]+1;
+        statusString =[NSString stringWithFormat:@"Player %d's Turn", playerNum];
+    }
+    
+    // ....
+}
+
+
+-(void)takeTurn:(GKTurnBasedMatch *)match{
+    
+    NSLog(@"Taking turn for existing game...");
+    
+    //prepare to continue game
+    
+    //....
+}
+
+-(void)sendNotice:(NSString *)notice forMatch:(GKTurnBasedMatch *)match{
+    
+    //another game needs your attention!
+    
+    UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Another game needs your attention!" message:notice delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    
+    [av show];
+    
+}
+
+
+-(void)recieveEndGame:(GKTurnBasedMatch *)match{
+    
+    //game has ended
+    
+    [self layoutMatch:match];
+}
+
 
 @end

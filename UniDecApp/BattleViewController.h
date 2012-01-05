@@ -11,7 +11,9 @@
 #import "Buff.h"
 #import "Turn.h"
 
-@interface BattleViewController : UIViewController
+#import "GCTurnBasedMatchHelper.h"
+
+@interface BattleViewController : UIViewController <GCTurnBasedMatchHelperDelegate>
 
 {   
     CardPanel* cardPanel;
@@ -49,12 +51,13 @@
 
 
 -(void) playTurn;
--(void) playFirstTurn;
 
 - (IBAction)RightSwipeAction:(id)sender;
 - (IBAction)LeftSwipeAction:(id)sender;
 - (IBAction)TapAction:(id)sender;
 - (IBAction)UpSwipeSelectAction:(id)sender;
 - (IBAction)BackgroundTapAction:(id)sender;
+
+-(void) sendTurn;
 
 @end
