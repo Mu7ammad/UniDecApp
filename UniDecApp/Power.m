@@ -9,7 +9,7 @@
 #import "Power.h"
 
 @implementation Power
-@synthesize attackPower,defensePower,restPower, ampMode;
+@synthesize ampMode, attackPower, defensePower, restPower;
 
 -(int)givePowerforMove:(int)move
 {

@@ -15,7 +15,12 @@
     int charge;
     int level;
     
-    Power* power;
-
 }
+
+@property (readonly, strong) NSDictionary* cardLibrary;
+@property (readwrite, strong) NSArray* cardPanelNames;
+@property (readonly, strong) Power* power;
+
++(Profile*) sharedInstance;
+
 @end

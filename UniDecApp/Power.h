@@ -10,12 +10,11 @@
 
 @interface Power : NSObject
 {
-
-
+    
 }
 
-@property int attackPower,defensePower,restPower;
 @property int ampMode;//amplification mode
+@property int attackPower, defensePower, restPower;
 
 -(int) givePowerforMove:(int) move;
 

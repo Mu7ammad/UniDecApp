@@ -21,6 +21,8 @@
 @property (strong) Power* power;
 @property (strong) MoveProb* prob;
 
+
+
 -(Move*) makeMove;
 
 @end

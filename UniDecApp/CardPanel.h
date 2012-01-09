@@ -39,6 +39,6 @@
 -(void) PushRight;
 
 -(Card*) SelectCard;
-
+-(NSArray*) getCardNames;
 
 @end

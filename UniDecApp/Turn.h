@@ -29,9 +29,13 @@
 
 @property int turnNo;
 
+@property bool initiator;
+
+
+-(id)initWithTurnData:(NSDictionary*) data;
+
 //makes my and his moves ready
 -(void) evaluateTurn;
-
 
 
 @end

@@ -12,11 +12,9 @@
 //connect to UI
 
 @interface ChargeMeter : NSObject
-{
-    int c , boundary;
-}
 
-@property (weak, nonatomic)  UILabel *myCharge;
-@property (weak, nonatomic)  UILabel *hisCharge;
-
+@property (weak, nonatomic)  UILabel *myChargeLabel;
+@property (weak, nonatomic)  UILabel *hisChargeLabel;
+@property int myCharge, hisCharge;
+@property bool hisUnavailable;
 @end

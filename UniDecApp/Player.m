@@ -11,6 +11,16 @@
 @implementation Player
 @synthesize power, prob, target;
 
+-(id)init{
+    
+    self = [super init];
+    
+    power= [[Power alloc]init];
+    prob= [[MoveProb alloc]init];
+    
+    return self;
+}
+
 -(Move *)makeMove
 {
 

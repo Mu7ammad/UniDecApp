@@ -21,19 +21,18 @@
     NSMutableArray* buffs;
       
     Turn* turn;
-        
-    bool end;
-    bool myTurn;
     
-    bool initiator;//wheather I'm the one who initiated the Battle
+    Card* playedCard;
+    
+    NSArray* hisCardNamesDeposit;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *BackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *CardPanelView;
 
 //to be replaced with proper UI elements
-@property (weak, nonatomic) IBOutlet UILabel *myCharge;
-@property (weak, nonatomic) IBOutlet UILabel *hisCharge;
+@property (weak, nonatomic) IBOutlet UILabel *myChargeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hisChargeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentWeather;
 //
 
@@ -50,7 +49,6 @@
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *UpSwipeSelectGest;
 
 
--(void) playTurn;
 
 - (IBAction)RightSwipeAction:(id)sender;
 - (IBAction)LeftSwipeAction:(id)sender;
@@ -58,6 +56,12 @@
 - (IBAction)UpSwipeSelectAction:(id)sender;
 - (IBAction)BackgroundTapAction:(id)sender;
 
+
+-(void) presentTurnWithData:(NSDictionary*) data;
+
+-(NSData*) encodeTurn;
+
 -(void) sendTurn;
+
 
 @end

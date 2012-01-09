@@ -7,6 +7,7 @@
 //
 
 #import "BattleViewController.h"
+#import "Profile.h"
 
 @implementation BattleViewController
 
@@ -14,8 +15,8 @@
 
 @synthesize BackgroundView;
 @synthesize CardPanelView;
-@synthesize myCharge;
-@synthesize hisCharge;
+@synthesize myChargeLabel;
+@synthesize hisChargeLabel;
 @synthesize currentWeather;
 
 @synthesize card1;
@@ -43,60 +44,8 @@
     [GCTurnBasedMatchHelper sharedInstance].delegate = self;
     
     
-    //load CardLibrary
-    NSString *path = [[NSBundle mainBundle] bundlePath];
-	
-	NSString *finalPath = [path stringByAppendingPathComponent:@"CardLibrary.plist"];
-	
-	NSDictionary* CardLibrary = [NSDictionary dictionaryWithContentsOfFile:finalPath];
-    
-    // specify card names used in panel
-    NSArray* cardNames = [NSArray arrayWithObjects:@"Fire Attack",@"Fire Defense", @"Fire Rest",@"Water Attack",@"Water Defense",@"Water Rest",@"Air Attack", nil];
-    
-    //init card panel 
-    cardPanel = [[CardPanel alloc]init:cardNames from:CardLibrary];
-        
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        // The device is an iPad 
-        
-        //take UIViews
-        cardPanel.PanelView = CardPanelView;
-        
-        [cardPanel takeCardViews:[NSArray arrayWithObjects:card1,card2,card3,card4,card5,card6,card7, nil] and:SelectedCard];
-        
-        //init turn and connect to UI 
-        turn = [[Turn alloc]init];
-        
-        turn.chargeMeter.myCharge = myCharge;
-        turn.chargeMeter.hisCharge = hisCharge;
-        turn.weather.currentWeather = currentWeather;
-        
-    }
-    else {
-        // The device is an iPhone or iPod touch.
-        
-    }
-
-}
-
-
--(void)playTurn
-{
-    
-    
-    
-    
-    
-    
-    //buff the turn
-    for (Buff* buff in buffs) {
-        [buff applyBuff:turn];
-    }
-
-    
-
-
-
+            
+  
 }
 
 - (void)viewDidUnload
@@ -113,8 +62,8 @@
     [self setUpSwipeSelectGest:nil];
     
     [self setSelectedCard:nil];
-    [self setMyCharge:nil];
-    [self setHisCharge:nil];
+    [self setMyChargeLabel:nil];
+    [self setHisChargeLabel:nil];
     [self setCurrentWeather:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -187,6 +136,102 @@
     [cardPanel PushDown];
 }
 
+
+
+
+-(void)presentTurnWithData:(NSDictionary *)data{
+    
+    
+    //init card panel 
+    if ([data objectForKey:@"initiator"]) {
+        
+        
+        cardPanel = [[CardPanel alloc]init:[data objectForKey:@"myCardNames"] from:[Profile sharedInstance].cardLibrary];
+        
+    }
+    else{
+        
+        cardPanel = [[CardPanel alloc]init:[data objectForKey:@"hisCardNames"] from:[Profile sharedInstance].cardLibrary];
+        
+    }
+    
+    //init turn
+    
+    turn = [[Turn alloc]initWithTurnData:data];
+    
+    
+    //connect UI
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        // The device is an iPad 
+        
+        //take UIViews
+        cardPanel.PanelView = CardPanelView;
+        
+        [cardPanel takeCardViews:[NSArray arrayWithObjects:card1,card2,card3,card4,card5,card6,card7, nil] and:SelectedCard];
+        
+        //init turn and connect to UI 
+        turn = [[Turn alloc]init];
+        
+        turn.chargeMeter.myChargeLabel = myChargeLabel;
+        turn.chargeMeter.hisChargeLabel = hisChargeLabel;
+        turn.weather.currentWeather = currentWeather;
+        
+    }
+    else {
+        // The device is an iPhone or iPod touch.
+        
+    }
+    
+}
+
+
+-(NSData *)encodeTurn
+{
+    
+    //10 items
+    NSString* playedCardName = playedCard.name;
+    
+    NSArray* myCardNames = [cardPanel getCardNames];
+    NSArray* hisCardNames = hisCardNamesDeposit;
+    
+    
+    bool initiator = !turn.initiator;
+    
+    int turnNo;
+    if (initiator) {
+        turnNo = turn.turnNo++;
+    }else{
+        
+        turnNo = turn.turnNo;
+    }
+    
+    int myCharge = turn.chargeMeter.myCharge;
+    int hisCharge = turn.chargeMeter.hisCharge;
+    
+    int opAttackPower = [Profile sharedInstance].power.attackPower;
+    
+    int opDefensePower = [Profile sharedInstance].power.defensePower;
+    
+    int opRestPower = [Profile sharedInstance].power.restPower;
+    
+    
+    NSArray* objects = [[NSArray alloc]initWithObjects:playedCardName, myCardNames, hisCardNames,initiator,turnNo, myCharge, hisCharge, opAttackPower, opDefensePower, opRestPower, nil];
+    NSArray* keys = [[NSArray alloc]initWithObjects:@"playedCardName",@"myCardNames",@"hisCardNames",@"initiator",@"turnNo",@"myCharge",@"hisCharge",@"opAttackPower", @"opDefenesePower", @"opRestPower", nil];
+    
+    NSDictionary* turnData = [[NSDictionary alloc]initWithObjects:objects forKeys:keys];
+    
+
+    
+    NSMutableData *data = [[NSMutableData alloc] init];
+	NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+	[archiver encodeObject:turnData forKey:@"turnData"];
+    [archiver finishEncoding];
+	
+    return [[NSData alloc]initWithData:data];
+    
+}
+
 -(void)sendTurn{
     
     //send NSData object of the turn
@@ -195,6 +240,8 @@
     
 }
 
+
+
 #pragma mark - GCTurnBasedMatchHelperDelegate
 
 -(void) enterNewGame:(GKTurnBasedMatch *)match{
@@ -202,6 +249,24 @@
     NSLog(@"Entering new game...");
     
     // prepare new game
+    
+        
+    NSArray* myCardNames = [Profile sharedInstance].cardPanelNames;
+    
+    bool initiator = YES;
+    
+    int turnNo = 1;
+    
+    int myCharge = 100;
+        
+    
+    NSArray* objects = [[NSArray alloc]initWithObjects:myCardNames,initiator,turnNo, myCharge, nil];
+    NSArray* keys = [[NSArray alloc]initWithObjects:@"myCardNames",@"initiator",@"turnNo",@"myCharge",nil];
+    
+    NSDictionary* FirstTurnData = [[NSDictionary alloc]initWithObjects:objects forKeys:keys];
+    
+    
+    [self presentTurnWithData:FirstTurnData];
     
     //...
 }
@@ -222,6 +287,10 @@
         statusString =[NSString stringWithFormat:@"Player %d's Turn", playerNum];
     }
     
+    NSDictionary* turnData = [[NSDictionary alloc]init];
+    
+    [self presentTurnWithData:turnData];
+    
     // ....
 }
 
@@ -232,7 +301,17 @@
     
     //prepare to continue game
     
+    
+    //check if it's my first time in this game ##
+    
+    
+    NSDictionary* turnData = [[NSDictionary alloc]init];
+    
+    [self presentTurnWithData:turnData];
     //....
+    
+        
+
 }
 
 -(void)sendNotice:(NSString *)notice forMatch:(GKTurnBasedMatch *)match{

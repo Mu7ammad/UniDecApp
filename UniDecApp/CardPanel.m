@@ -104,7 +104,17 @@
     return SelectedCard;
 }
 
-
+-(NSArray *)getCardNames{
+    
+    NSMutableArray* cardNames = [[NSMutableArray alloc]init];
+    
+    for (Card* card in Cards) {
+        
+        [cardNames addObject:card.name];
+    }
+    
+    return [[NSArray alloc]initWithArray:cardNames];
+}
 
 //UI Animations
 

@@ -7,21 +7,74 @@
 //
 
 #import "Turn.h"
+#import "Profile.h"
 
 @implementation Turn
-@synthesize myPlayer, hisPlayer, weather, chargeMeter, myMove, hisMove, turnNo;
+@synthesize myPlayer, hisPlayer, weather, chargeMeter, myMove, hisMove, turnNo, initiator;
 
 
--(id)init
-{
+-(id)initWithTurnData:(NSDictionary*) data{
+    
     self = [super init];
+        
+    //flags
+    initiator = [data objectForKey:@"initiator"];
     
-    myPlayer = [[Player alloc]init];
-    hisPlayer = [[Player alloc]init];
+    NSNumber *num = [data objectForKey:@"turnNo"];
+    turnNo = [num intValue];
+    num = nil;
     
-    weather = [[Weather alloc]init];
     
+    //chargeMeter
     chargeMeter = [[ChargeMeter alloc]init];
+    
+    num = [data objectForKey:@"myCharge"];
+    chargeMeter.myCharge = [num intValue];
+    num = nil;
+    
+    if ([data objectForKey:@"hisCharge"]) {
+    
+        num = [data objectForKey:@"myCharge"];
+        chargeMeter.myCharge = [num intValue];
+        num = nil;
+        
+        chargeMeter.hisUnavailable = NO;
+        
+    }else{
+        
+        chargeMeter.hisUnavailable = YES;
+    }
+    
+    
+    //myPlayer
+    myPlayer = [[Player alloc]init];
+    
+    myPlayer.power.attackPower = [Profile sharedInstance].power.attackPower;
+    myPlayer.power.defensePower = [Profile sharedInstance].power.defensePower;
+    myPlayer.power.restPower = [Profile sharedInstance].power.restPower;
+    
+    
+    //hisPlayer (if present, if not first turn)
+    if ([data objectForKey:@"opAttackPower"]) {
+                
+        hisPlayer = [[Player alloc]init];
+        
+        num = [data objectForKey:@"opAttackPower"];
+        hisPlayer.power.attackPower = [num intValue];
+        num = nil;
+        
+        num = [data objectForKey:@"opDefenesePower"];
+        hisPlayer.power.defensePower = [num intValue];
+        num = nil;
+        
+        num = [data objectForKey:@"opRestPower"];
+        hisPlayer.power.restPower = [num intValue];
+        num = nil;
+    }
+    
+    
+    
+    
     
     return self;
 }
@@ -32,4 +85,6 @@
     //the turn is buffed, generate the moves
 
 }
+
+
 @end
