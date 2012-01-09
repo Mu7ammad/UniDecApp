@@ -104,6 +104,14 @@
     return SelectedCard;
 }
 
+-(Card *)SelectCardNo:(int)num{
+    
+    [SelectedCard copyCard:[Cards objectAtIndex:num]];
+    
+    return SelectedCard;
+}
+
+
 -(NSArray *)getCardNames{
     
     NSMutableArray* cardNames = [[NSMutableArray alloc]init];

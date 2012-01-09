@@ -18,22 +18,28 @@
 {   
     CardPanel* cardPanel;
     
+    Card* playedCard;
+    
     NSMutableArray* buffs;
       
     Turn* turn;
     
-    Card* playedCard;
-    
     NSArray* hisCardNamesDeposit;
+    
+    
 }
+
+
+//iPad UI elements
 
 @property (weak, nonatomic) IBOutlet UIView *BackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *CardPanelView;
 
+
 //to be replaced with proper UI elements
 @property (weak, nonatomic) IBOutlet UILabel *myChargeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hisChargeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *currentWeather;
+@property (weak, nonatomic) IBOutlet UILabel *currentWeatherLabel;
 //
 
 @property (weak, nonatomic) IBOutlet UIImageView *card1;
@@ -49,15 +55,26 @@
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *UpSwipeSelectGest;
 
 
-
 - (IBAction)RightSwipeAction:(id)sender;
 - (IBAction)LeftSwipeAction:(id)sender;
 - (IBAction)TapAction:(id)sender;
-- (IBAction)UpSwipeSelectAction:(id)sender;
 - (IBAction)BackgroundTapAction:(id)sender;
 
+- (IBAction)UpSwipeSelectAction:(id)sender;
+
+//iPod UI elements
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *SegmentedPanel;
+
+@property (weak, nonatomic) IBOutlet UILabel *myChargeLabel_iPod;
+@property (weak, nonatomic) IBOutlet UILabel *hisChargeLabel_iPod;
+@property (weak, nonatomic) IBOutlet UILabel *currentWeatherLabel_iPod;
+
+- (IBAction)SegmentSelectAction:(id)sender;
 
 -(void) presentTurnWithData:(NSDictionary*) data;
+
+-(void) playTurnWith:(Card*)myCard:(Card*)hisCard;
 
 -(NSData*) encodeTurn;
 

@@ -25,7 +25,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="presentGCTurnViewController_iPad:" destination="wxa-nW-VdO" eventType="touchUpInside" id="de0-Fj-QJp"/>
+                                    <segue destination="2" kind="modal" id="a48-8B-Hog"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -134,9 +134,9 @@
                         <outlet property="card5" destination="FzT-4R-sSW" id="eyY-W9-ErC"/>
                         <outlet property="card6" destination="biF-d6-0VC" id="Gct-lU-TES"/>
                         <outlet property="card7" destination="7F5-mW-xpM" id="z1M-de-gjt"/>
-                        <outlet property="currentWeather" destination="xoY-xh-qc1" id="Ggc-BT-ikS"/>
-                        <outlet property="hisCharge" destination="DuX-wz-dBh" id="AO6-M9-Hjk"/>
-                        <outlet property="myCharge" destination="viV-TL-YnZ" id="mOA-hP-Bsb"/>
+                        <outlet property="currentWeatherLabel" destination="xoY-xh-qc1" id="6V8-Pq-rVi"/>
+                        <outlet property="hisChargeLabel" destination="viV-TL-YnZ" id="4mE-0A-VhY"/>
+                        <outlet property="myChargeLabel" destination="DuX-wz-dBh" id="1ob-sv-qMy"/>
                     </connections>
                 </viewController>
                 <swipeGestureRecognizer direction="right" id="K51-wz-1cu">
@@ -193,16 +193,12 @@
                 <relationship kind="outlet" name="card6" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="card7" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="currentWeather" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="hisCharge" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="myCharge" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hisChargeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="myChargeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="HomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="presentGCTurnViewController_iPad:"/>
-                <relationship kind="action" name="presentGCTurnViewController_iPod:"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

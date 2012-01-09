@@ -10,6 +10,10 @@
 #import "Profile.h"
 
 @implementation BattleViewController
+@synthesize SegmentedPanel;
+@synthesize myChargeLabel_iPod;
+@synthesize hisChargeLabel_iPod;
+@synthesize currentWeatherLabel_iPod;
 
 @synthesize UpSwipeSelectGest;
 
@@ -17,7 +21,7 @@
 @synthesize CardPanelView;
 @synthesize myChargeLabel;
 @synthesize hisChargeLabel;
-@synthesize currentWeather;
+@synthesize currentWeatherLabel;
 
 @synthesize card1;
 @synthesize card2;
@@ -42,8 +46,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     [GCTurnBasedMatchHelper sharedInstance].delegate = self;
-    
-    
+
+    //present MatchMaker ViewController
+    [[GCTurnBasedMatchHelper sharedInstance] findMatchWithMinPlayers:2 maxPlayers:2 viewController:self];
+
             
   
 }
@@ -64,7 +70,11 @@
     [self setSelectedCard:nil];
     [self setMyChargeLabel:nil];
     [self setHisChargeLabel:nil];
-    [self setCurrentWeather:nil];
+    [self setCurrentWeatherLabel:nil];
+    [self setSegmentedPanel:nil];
+    [self setMyChargeLabel_iPod:nil];
+    [self setHisChargeLabel_iPod:nil];
+    [self setCurrentWeatherLabel_iPod:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -125,17 +135,34 @@
         if(x>224 && x<544) //action on center card
         {
         
-            [cardPanel SelectCard];
+            
+           playedCard = [cardPanel SelectCard];
+            
+            //sending the turn
+            [self sendTurn];
             
         }
     
 }
 
+
+
+- (IBAction)SegmentSelectAction:(id)sender {
+
+    
+    
+    playedCard = [cardPanel SelectCardNo:SegmentedPanel.selectedSegmentIndex];
+    
+    //sending the turn
+    [self sendTurn];
+    
+}
+
+
 - (IBAction)BackgroundTapAction:(id)sender {
     
     [cardPanel PushDown];
 }
-
 
 
 
@@ -175,13 +202,38 @@
         
         turn.chargeMeter.myChargeLabel = myChargeLabel;
         turn.chargeMeter.hisChargeLabel = hisChargeLabel;
-        turn.weather.currentWeather = currentWeather;
+        turn.weather.currentWeather = currentWeatherLabel;
         
     }
     else {
         // The device is an iPhone or iPod touch.
         
+        turn.chargeMeter.myChargeLabel = myChargeLabel_iPod;
+        turn.chargeMeter.hisChargeLabel = hisChargeLabel_iPod;
+        turn.weather.currentWeather = currentWeatherLabel_iPod;
+        
     }
+    
+}
+
+-(void)playTurnWith:(Card *)myCard :(Card *)hisCard{
+    
+    buffs = [[NSMutableArray alloc]init];
+    
+    [buffs addObjectsFromArray:[myCard generateBuffs]];
+    [buffs addObjectsFromArray:[hisCard generateBuffs]];
+    
+    //the turn is buffed
+    for (Buff *buff in buffs) {
+        
+        [buff applyBuff:turn];
+        
+    }
+    
+    //take moves and affect ChargeMeter
+    [turn.myPlayer makeMove];
+    
+    [turn.hisPlayer makeMove];
     
 }
 
@@ -189,12 +241,14 @@
 -(NSData *)encodeTurn
 {
     
-    //10 items
+    //13 items
     NSString* playedCardName = playedCard.name;
-    
+    // card2
     NSArray* myCardNames = [cardPanel getCardNames];
     NSArray* hisCardNames = hisCardNamesDeposit;
     
+    //weather 1
+    //weather 2
     
     bool initiator = !turn.initiator;
     
@@ -236,7 +290,45 @@
     
     //send NSData object of the turn
     
-    //make sure you don't send the turn to a participant who had quit 
+    
+    NSData* turnData = [self encodeTurn];
+    
+    //get match
+    GKTurnBasedMatch *currentMatch = 
+    [[GCTurnBasedMatchHelper sharedInstance] currentMatch];
+    
+        
+    
+    NSUInteger currentIndex = [currentMatch.participants 
+                               indexOfObject:currentMatch.currentParticipant];
+    GKTurnBasedParticipant *nextParticipant;
+    
+    NSUInteger nextIndex = (currentIndex + 1) % 
+    [currentMatch.participants count];
+    nextParticipant = 
+    [currentMatch.participants objectAtIndex:nextIndex];
+    
+    
+    //make sure you don't send the turn to someone who quit
+    for (int i = 0; i < [currentMatch.participants count]; i++) {
+        nextParticipant = [currentMatch.participants 
+                           objectAtIndex:((currentIndex + 1 + i) % 
+                                          [currentMatch.participants count ])];
+        if (nextParticipant.matchOutcome != 
+            GKTurnBasedMatchOutcomeQuit) {
+            break;
+        } 
+    }    
+    
+    
+    [currentMatch endTurnWithNextParticipant:nextParticipant matchData:turnData completionHandler:^(NSError *error) {
+        
+        if (error) {
+            NSLog(@"%@", error);
+        }
+    }];
+    
+    NSLog(@"Send Turn, %@, %@", turnData, nextParticipant);
     
 }
 
@@ -287,8 +379,14 @@
         statusString =[NSString stringWithFormat:@"Player %d's Turn", playerNum];
     }
     
-    NSDictionary* turnData = [[NSDictionary alloc]init];
     
+    //unpack data
+    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:match.matchData];
+    
+    NSDictionary *turnData = [unarchiver decodeObjectForKey:@"turnData"];
+    [unarchiver finishDecoding];
+
+    //present turn
     [self presentTurnWithData:turnData];
     
     // ....
@@ -305,9 +403,16 @@
     //check if it's my first time in this game ##
     
     
-    NSDictionary* turnData = [[NSDictionary alloc]init];
     
+    //unpack data
+    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:match.matchData];
+    
+    NSDictionary *turnData = [unarchiver decodeObjectForKey:@"turnData"];
+    [unarchiver finishDecoding];
+    
+    //present turn
     [self presentTurnWithData:turnData];
+    
     //....
     
         
