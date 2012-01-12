@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import "GCTurnBasedMatchHelper.h"
+
 @implementation HomeViewController
 
 

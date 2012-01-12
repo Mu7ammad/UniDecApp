@@ -14,7 +14,7 @@
 @interface ChargeMeter : NSObject
 
 @property (weak, nonatomic)  UILabel *myChargeLabel;
-@property (weak, nonatomic)  UILabel *hisChargeLabel;
-@property int myCharge, hisCharge;
-@property bool hisUnavailable;
+@property (weak, nonatomic)  UILabel *opChargeLabel;
+@property int myCharge, opCharge;
+@property bool opUnavailable;
 @end

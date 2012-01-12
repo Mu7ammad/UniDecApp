@@ -29,8 +29,6 @@
 
 @property int turnNo;
 
-@property bool initiator;
-
 
 -(id)initWithTurnData:(NSDictionary*) data;
 

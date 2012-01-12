@@ -10,7 +10,7 @@
 #import "CardPanel.h"
 #import "Buff.h"
 #import "Turn.h"
-
+#import "Profile.h"
 #import "GCTurnBasedMatchHelper.h"
 
 @interface BattleViewController : UIViewController <GCTurnBasedMatchHelperDelegate>
@@ -24,8 +24,11 @@
       
     Turn* turn;
     
-    NSArray* hisCardNamesDeposit;
+    NSArray* opCardNamesDeposit;
     
+    bool newGame;
+    bool myTurn;
+    bool secondPhase;
     
 }
 
@@ -79,6 +82,5 @@
 -(NSData*) encodeTurn;
 
 -(void) sendTurn;
-
 
 @end

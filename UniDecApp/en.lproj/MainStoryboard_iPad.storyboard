@@ -25,7 +25,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="a48-8B-Hog"/>
+                                    <segue destination="2" kind="modal" id="RaD-u6-AJG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -117,9 +117,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="1dw-aD-lnk" appends="YES" id="Fzm-LZ-9QK"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="8Ef-Ct-fs2"/>
                     <connections>
@@ -159,11 +156,6 @@
                         <action selector="TapAction:" destination="2" id="KFq-Gh-vCU"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="1dw-aD-lnk">
-                    <connections>
-                        <action selector="BackgroundTapAction:" destination="2" id="7d5-GP-zM8"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="24" y="-231"/>
         </scene>
@@ -179,10 +171,12 @@
                 <relationship kind="action" name="BackgroundTapAction:"/>
                 <relationship kind="action" name="LeftSwipeAction:"/>
                 <relationship kind="action" name="RightSwipeAction:"/>
+                <relationship kind="action" name="SegmentSelectAction:"/>
                 <relationship kind="action" name="TapAction:"/>
                 <relationship kind="action" name="UpSwipeSelectAction:"/>
                 <relationship kind="outlet" name="BackgroundView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="CardPanelView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="SegmentedPanel" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="SelectedCard" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="UpSwipeSelectGest" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="card1" candidateClass="UIImageView"/>
@@ -192,9 +186,12 @@
                 <relationship kind="outlet" name="card5" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="card6" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="card7" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="currentWeather" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="currentWeatherLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="currentWeatherLabel_iPod" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="hisChargeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hisChargeLabel_iPod" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="myChargeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="myChargeLabel_iPod" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="HomeViewController" superclassName="UIViewController">

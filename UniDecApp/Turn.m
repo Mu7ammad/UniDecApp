@@ -10,17 +10,17 @@
 #import "Profile.h"
 
 @implementation Turn
-@synthesize myPlayer, hisPlayer, weather, chargeMeter, myMove, hisMove, turnNo, initiator;
+@synthesize myPlayer, hisPlayer, weather, chargeMeter, myMove, hisMove, turnNo;
 
 
 -(id)initWithTurnData:(NSDictionary*) data{
     
     self = [super init];
-        
-    //flags
-    initiator = [data objectForKey:@"initiator"];
     
-    NSNumber *num = [data objectForKey:@"turnNo"];
+    NSNumber* num;
+    
+    num = [data objectForKey:@"turnNo"];
+    int x = [num intValue];
     turnNo = [num intValue];
     num = nil;
     
@@ -29,20 +29,22 @@
     chargeMeter = [[ChargeMeter alloc]init];
     
     num = [data objectForKey:@"myCharge"];
+    int y = [num intValue];
     chargeMeter.myCharge = [num intValue];
     num = nil;
     
-    if ([data objectForKey:@"hisCharge"]) {
+    if ([data objectForKey:@"opCharge"]) {
     
-        num = [data objectForKey:@"myCharge"];
+        num = [data objectForKey:@"hisCharge"];
+        int z = [num intValue];
         chargeMeter.myCharge = [num intValue];
         num = nil;
         
-        chargeMeter.hisUnavailable = NO;
+        chargeMeter.opUnavailable = NO;
         
     }else{
         
-        chargeMeter.hisUnavailable = YES;
+        chargeMeter.opUnavailable = YES;
     }
     
     
@@ -60,14 +62,17 @@
         hisPlayer = [[Player alloc]init];
         
         num = [data objectForKey:@"opAttackPower"];
+        int xx = [num intValue];
         hisPlayer.power.attackPower = [num intValue];
         num = nil;
         
         num = [data objectForKey:@"opDefenesePower"];
+        int yy = [num intValue];
         hisPlayer.power.defensePower = [num intValue];
         num = nil;
         
         num = [data objectForKey:@"opRestPower"];
+        int zz = [num intValue];
         hisPlayer.power.restPower = [num intValue];
         num = nil;
     }

@@ -7,7 +7,7 @@
 //
 
 #import "BattleViewController.h"
-#import "Profile.h"
+
 
 @implementation BattleViewController
 @synthesize SegmentedPanel;
@@ -46,12 +46,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     [GCTurnBasedMatchHelper sharedInstance].delegate = self;
-
-    //present MatchMaker ViewController
-    [[GCTurnBasedMatchHelper sharedInstance] findMatchWithMinPlayers:2 maxPlayers:2 viewController:self];
-
-            
-  
+              
 }
 
 - (void)viewDidUnload
@@ -90,6 +85,12 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    
+    //present MatchMaker ViewController
+    [[GCTurnBasedMatchHelper sharedInstance] findMatchWithMinPlayers:2 maxPlayers:2 viewController:self];
+    
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -197,11 +198,9 @@
         
         [cardPanel takeCardViews:[NSArray arrayWithObjects:card1,card2,card3,card4,card5,card6,card7, nil] and:SelectedCard];
         
-        //init turn and connect to UI 
-        turn = [[Turn alloc]init];
-        
+               
         turn.chargeMeter.myChargeLabel = myChargeLabel;
-        turn.chargeMeter.hisChargeLabel = hisChargeLabel;
+        turn.chargeMeter.opChargeLabel = hisChargeLabel;
         turn.weather.currentWeather = currentWeatherLabel;
         
     }
@@ -209,7 +208,7 @@
         // The device is an iPhone or iPod touch.
         
         turn.chargeMeter.myChargeLabel = myChargeLabel_iPod;
-        turn.chargeMeter.hisChargeLabel = hisChargeLabel_iPod;
+        turn.chargeMeter.opChargeLabel = hisChargeLabel_iPod;
         turn.weather.currentWeather = currentWeatherLabel_iPod;
         
     }
@@ -241,38 +240,70 @@
 -(NSData *)encodeTurn
 {
     
-    //13 items
-    NSString* playedCardName = playedCard.name;
+    NSMutableArray* objects = [[NSMutableArray alloc]init];
+    NSMutableArray* keys = [[NSMutableArray alloc]init];
+    
+    //12 items (I'm opponent)
+    
+    
+    NSString* opPlayedCardName = playedCard.name;
+    
+    [objects addObject:opPlayedCardName];
+    [keys addObject:@"opPlayedCardName"];
+    
     // card2
-    NSArray* myCardNames = [cardPanel getCardNames];
-    NSArray* hisCardNames = hisCardNamesDeposit;
+    
+    NSArray* opCardNames = [cardPanel getCardNames];
+    [objects addObject:opCardNames];
+    [keys addObject:@"opCardNames"];
+    
+    
+    if (opCardNamesDeposit) {
+        NSArray* myCardNames = opCardNamesDeposit;
+        
+        [objects addObject:myCardNames];
+        [keys addObject:@"myCardNames"];
+        
+    }
     
     //weather 1
     //weather 2
     
-    bool initiator = !turn.initiator;
     
-    int turnNo;
-    if (initiator) {
-        turnNo = turn.turnNo++;
-    }else{
+    
+    NSNumber* turnNo = [NSNumber numberWithInt:turn.turnNo++];
+    int x = [turnNo intValue];
+    [objects addObject:turnNo];
+    [keys addObject:@"turnNo"];
+    
+    
+    NSNumber* opCharge =[NSNumber numberWithInt:turn.chargeMeter.myCharge];
+    int y = [opCharge intValue];
+    [objects addObject:opCharge];
+    [keys addObject:@"opCharge"];
+    
+    if (turn.chargeMeter.opCharge) {
+       
+        NSNumber* myCharge = [NSNumber numberWithInt:turn.chargeMeter.opCharge];
+        [objects addObject:myCharge];
+        [keys addObject:@"myCharge"];
         
-        turnNo = turn.turnNo;
     }
     
-    int myCharge = turn.chargeMeter.myCharge;
-    int hisCharge = turn.chargeMeter.hisCharge;
+    NSNumber* opAttackPower = [NSNumber numberWithInt:[Profile sharedInstance].power.attackPower];
+    int z = [opAttackPower intValue];
+    [objects addObject:opAttackPower];
+    [keys addObject:@"opAttackPower"];
     
-    int opAttackPower = [Profile sharedInstance].power.attackPower;
+    NSNumber* opDefensePower = [NSNumber numberWithInt:[Profile sharedInstance].power.defensePower];
+    [objects addObject:opDefensePower];
+    [keys addObject:@"opDefensePower"];
     
-    int opDefensePower = [Profile sharedInstance].power.defensePower;
+    NSNumber* opRestPower = [NSNumber numberWithInt:[Profile sharedInstance].power.restPower];
+    [objects addObject:opRestPower];
+    [keys addObject:@"opRestPower"];
     
-    int opRestPower = [Profile sharedInstance].power.restPower;
-    
-    
-    NSArray* objects = [[NSArray alloc]initWithObjects:playedCardName, myCardNames, hisCardNames,initiator,turnNo, myCharge, hisCharge, opAttackPower, opDefensePower, opRestPower, nil];
-    NSArray* keys = [[NSArray alloc]initWithObjects:@"playedCardName",@"myCardNames",@"hisCardNames",@"initiator",@"turnNo",@"myCharge",@"hisCharge",@"opAttackPower", @"opDefenesePower", @"opRestPower", nil];
-    
+        
     NSDictionary* turnData = [[NSDictionary alloc]initWithObjects:objects forKeys:keys];
     
 
@@ -332,8 +363,6 @@
     
 }
 
-
-
 #pragma mark - GCTurnBasedMatchHelperDelegate
 
 -(void) enterNewGame:(GKTurnBasedMatch *)match{
@@ -345,11 +374,11 @@
         
     NSArray* myCardNames = [Profile sharedInstance].cardPanelNames;
     
-    bool initiator = YES;
+    NSNumber* initiator = [NSNumber numberWithBool:YES];
     
-    int turnNo = 1;
+    NSNumber* turnNo =[NSNumber numberWithInt:1];
     
-    int myCharge = 100;
+    NSNumber* myCharge = [NSNumber numberWithInt:100];
         
     
     NSArray* objects = [[NSArray alloc]initWithObjects:myCardNames,initiator,turnNo, myCharge, nil];
@@ -358,6 +387,8 @@
     NSDictionary* FirstTurnData = [[NSDictionary alloc]initWithObjects:objects forKeys:keys];
     
     
+    newGame = YES;
+    myTurn = YES;
     [self presentTurnWithData:FirstTurnData];
     
     //...
@@ -386,7 +417,8 @@
     NSDictionary *turnData = [unarchiver decodeObjectForKey:@"turnData"];
     [unarchiver finishDecoding];
 
-    //present turn
+    newGame = NO;
+    myTurn = NO;
     [self presentTurnWithData:turnData];
     
     // ....
@@ -410,7 +442,8 @@
     NSDictionary *turnData = [unarchiver decodeObjectForKey:@"turnData"];
     [unarchiver finishDecoding];
     
-    //present turn
+    newGame = NO;
+    myTurn = YES;
     [self presentTurnWithData:turnData];
     
     //....

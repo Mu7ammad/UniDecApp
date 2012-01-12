@@ -9,6 +9,6 @@
 #import "ChargeMeter.h"
 
 @implementation ChargeMeter
-@synthesize myCharge,hisCharge, myChargeLabel, hisChargeLabel, hisUnavailable;
+@synthesize myCharge,opCharge, myChargeLabel, opChargeLabel, opUnavailable;
 
 @end
