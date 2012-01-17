@@ -13,10 +13,16 @@
 #import "Profile.h"
 #import "GCTurnBasedMatchHelper.h"
 
+
+
 @interface BattleViewController : UIViewController <GCTurnBasedMatchHelperDelegate>
 
 {   
     CardPanel* cardPanel;
+    
+    Card* myPrePlayedCard;
+    Card* opPrePlayedCard;
+    Card* opPlayedCard;
     
     Card* playedCard;
     
@@ -26,9 +32,6 @@
     
     NSArray* opCardNamesDeposit;
     
-    bool newGame;
-    bool myTurn;
-    bool secondPhase;
     
 }
 
@@ -75,6 +78,7 @@
 
 - (IBAction)SegmentSelectAction:(id)sender;
 
+//Turn-based
 -(void) presentTurnWithData:(NSDictionary*) data;
 
 -(void) playTurnWith:(Card*)myCard:(Card*)hisCard;

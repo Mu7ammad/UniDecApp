@@ -244,51 +244,75 @@
     NSMutableArray* keys = [[NSMutableArray alloc]init];
     
     //12 items (I'm opponent)
+      
+    //increment the number you send
+    NSNumber* turnNo = [NSNumber numberWithInt:turn.turnNo++];
+    int x = [turnNo intValue];
+    [objects addObject:turnNo];
+    [keys addObject:@"turnNo"];
+
     
+  
+        if (turn.turnNo%2) {//odd, to be sent to me again, 2 cards
+       
+        NSString* myPrePlayedCardName = playedCard.name;
+        [objects addObject:myPrePlayedCardName];
+        [keys addObject:@"myPrePlayedCardName"];
+            
+                        
+        NSString* opPrePlayedCardName = opPlayedCard.name;
+        [objects addObject:opPrePlayedCardName];
+        [keys addObject:@"opPrePlayedCardName"];
+            
+            
+        } else {//even, to be sent to op, 3 cards (1 at start)
+                        
+            NSString* opPlayedCardName = playedCard.name;
+            [objects addObject:opPlayedCardName];
+            [keys addObject:@"opPlayedCardName"];
+            
+            if (turn.turnNo>0) {
+                NSString* myPrePlayedCardName = opPrePlayedCard.name;
+                [objects addObject:myPrePlayedCardName];
+                [keys addObject:@"myPrePlayedCardName"];
+                
+                
+                NSString* opPrePlayedCardName = myPrePlayedCard.name;
+                [objects addObject:opPrePlayedCardName];
+                [keys addObject:@"opPrePlayedCardName"];
+                
+            }
+        }
     
-    NSString* opPlayedCardName = playedCard.name;
-    
-    [objects addObject:opPlayedCardName];
-    [keys addObject:@"opPlayedCardName"];
-    
-    // card2
-    
+    if (turn.turnNo>0) {//we now about the op player
+        
+        NSArray* myCardNames = opCardNamesDeposit;
+        [objects addObject:myCardNames];
+        [keys addObject:@"myCardNames"];
+        
+        
+        NSNumber* myCharge = [NSNumber numberWithInt:turn.chargeMeter.opCharge];
+        [objects addObject:myCharge];
+        [keys addObject:@"myCharge"];
+        
+    }
+        
     NSArray* opCardNames = [cardPanel getCardNames];
     [objects addObject:opCardNames];
     [keys addObject:@"opCardNames"];
     
     
-    if (opCardNamesDeposit) {
-        NSArray* myCardNames = opCardNamesDeposit;
-        
-        [objects addObject:myCardNames];
-        [keys addObject:@"myCardNames"];
-        
-    }
-    
     //weather 1
     //weather 2
     
     
-    
-    NSNumber* turnNo = [NSNumber numberWithInt:turn.turnNo++];
-    int x = [turnNo intValue];
-    [objects addObject:turnNo];
-    [keys addObject:@"turnNo"];
-    
+        
     
     NSNumber* opCharge =[NSNumber numberWithInt:turn.chargeMeter.myCharge];
     int y = [opCharge intValue];
     [objects addObject:opCharge];
     [keys addObject:@"opCharge"];
     
-    if (turn.chargeMeter.opCharge) {
-       
-        NSNumber* myCharge = [NSNumber numberWithInt:turn.chargeMeter.opCharge];
-        [objects addObject:myCharge];
-        [keys addObject:@"myCharge"];
-        
-    }
     
     NSNumber* opAttackPower = [NSNumber numberWithInt:[Profile sharedInstance].power.attackPower];
     int z = [opAttackPower intValue];
@@ -334,30 +358,48 @@
                                indexOfObject:currentMatch.currentParticipant];
     GKTurnBasedParticipant *nextParticipant;
     
-    NSUInteger nextIndex = (currentIndex + 1) % 
-    [currentMatch.participants count];
-    nextParticipant = 
-    [currentMatch.participants objectAtIndex:nextIndex];
+    //choosing next participant
+    if (turn.turnNo%2) {//odd, to be sent to me again
+        
+        
+        nextParticipant = currentMatch.currentParticipant;
+        
+    } else {//even, to be sent to op
+        
+        NSUInteger nextIndex = (currentIndex + 1) % [currentMatch.participants count];
+        nextParticipant = [currentMatch.participants objectAtIndex:nextIndex];
+        
+        
+    }
+    
+    /*
+    for (int i = 0; i < [currentMatch.participants count]; i++) {
+        
+         nextParticipant = [currentMatch.participants 
+                           objectAtIndex:((currentIndex + 1 + i) % 
+                                          [currentMatch.participants count ])];
+        
+         if (nextParticipant.matchOutcome != GKTurnBasedMatchOutcomeQuit) {
+            break;
+        } 
+    } */   
     
     
     //make sure you don't send the turn to someone who quit
-    for (int i = 0; i < [currentMatch.participants count]; i++) {
-        nextParticipant = [currentMatch.participants 
-                           objectAtIndex:((currentIndex + 1 + i) % 
-                                          [currentMatch.participants count ])];
-        if (nextParticipant.matchOutcome != 
-            GKTurnBasedMatchOutcomeQuit) {
-            break;
-        } 
-    }    
-    
-    
-    [currentMatch endTurnWithNextParticipant:nextParticipant matchData:turnData completionHandler:^(NSError *error) {
+
+    if (nextParticipant.matchOutcome != GKTurnBasedMatchOutcomeQuit) {
         
-        if (error) {
-            NSLog(@"%@", error);
-        }
-    }];
+        [currentMatch endTurnWithNextParticipant:nextParticipant matchData:turnData completionHandler:^(NSError *error) {
+            
+            if (error) {
+                NSLog(@"%@", error);
+            }
+        }];
+    } 
+    else{
+        //******
+    }
+       
     
     NSLog(@"Send Turn, %@, %@", turnData, nextParticipant);
     
@@ -387,8 +429,6 @@
     NSDictionary* FirstTurnData = [[NSDictionary alloc]initWithObjects:objects forKeys:keys];
     
     
-    newGame = YES;
-    myTurn = YES;
     [self presentTurnWithData:FirstTurnData];
     
     //...
@@ -417,8 +457,6 @@
     NSDictionary *turnData = [unarchiver decodeObjectForKey:@"turnData"];
     [unarchiver finishDecoding];
 
-    newGame = NO;
-    myTurn = NO;
     [self presentTurnWithData:turnData];
     
     // ....
@@ -442,8 +480,6 @@
     NSDictionary *turnData = [unarchiver decodeObjectForKey:@"turnData"];
     [unarchiver finishDecoding];
     
-    newGame = NO;
-    myTurn = YES;
     [self presentTurnWithData:turnData];
     
     //....
