@@ -37,7 +37,7 @@
     {
         
         if (target) {
-        turn.hisPlayer.prob.suggestedMove =0;    
+        turn.opPlayer.prob.suggestedMove =0;    
         }
         else
         {
@@ -48,7 +48,7 @@
     else if (move == @"Defense")
     {
         if (target) {
-        turn.hisPlayer.prob.suggestedMove =1;
+        turn.opPlayer.prob.suggestedMove =1;
         }
         else
         {        
@@ -59,7 +59,7 @@
     else if (move ==@"Rest")
     {
         if (target) {
-        turn.hisPlayer.prob.suggestedMove =2;    
+        turn.opPlayer.prob.suggestedMove =2;    
         }
         else
         {

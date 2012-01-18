@@ -12,16 +12,19 @@
 
 @interface Weather : NSObject
 
-@property bool HotCold, WetDry;
+@property bool HotCold, WetDry;//0 hot or wet, 1 cold or dry
 
-@property bool nextHotCold, nextWetDry;
+@property (nonatomic) bool nextHotCold, nextWetDry;
+
+@property bool controlledTemp;
+@property bool controlledHumid;
 
 @property int seasonCounter;
 
-@property (weak, nonatomic) UILabel *currentWeather;
+@property (weak, nonatomic) UILabel *currentWeatherLabel;
 
 -(void) presentWeatehr;
 
--(void) changeSeason:(int) choice;
+-(void) takeIndicator:(UILabel *)weatherLabel;
 
 @end

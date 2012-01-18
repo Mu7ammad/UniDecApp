@@ -32,25 +32,34 @@
 
 {
 
-    if (weather ==@"Winter") {
+    if (weather ==@"Winter") {//wet cold
         
-        [turn.weather changeSeason:2];
+        turn.weather.nextWetDry=0;
         
+        turn.weather.nextHotCold=1;
     }
     else
-        if (weather ==@"Summer") {
+        if (weather ==@"Summer"
+            ) {//dry hot
             
-            [turn.weather changeSeason:3];
+            turn.weather.nextWetDry=1;
+            
+            turn.weather.nextHotCold=0;        
         }
     else
-        if (weather ==@"Autumn") {
+        if (weather ==@"Autumn") {//dry cold
                 
-            [turn.weather changeSeason:4];
+            turn.weather.nextWetDry=1;
+            
+            turn.weather.nextHotCold=1;        
         }
     else
-        if (weather ==@"Spring") {
+        if (weather ==@"Spring") {//wet hot
                     
-            [turn.weather changeSeason:1];
+            turn.weather.nextWetDry=0;
+            
+            turn.weather.nextHotCold=0;
+        
         }
     else
         if (weather == @"Hot") {
@@ -70,7 +79,10 @@
         }
     else 
         if (weather ==@"Toggle") {
-            [turn.weather changeSeason:5];
+            
+            turn.weather.nextHotCold = ! turn.weather.HotCold;
+            
+            turn.weather.nextWetDry = ! turn.weather.WetDry;
         }
 
 

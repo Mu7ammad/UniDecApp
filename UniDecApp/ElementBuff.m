@@ -92,7 +92,7 @@
     
     if (penalty) {
         if (target) {
-            turn.hisPlayer.power.ampMode = 2;
+            turn.opPlayer.power.ampMode = 2;
         }
         else
         {
@@ -106,7 +106,7 @@
         if (bonus) {
             
             if (target) {
-                turn.hisPlayer.power.ampMode =1;
+                turn.opPlayer.power.ampMode =1;
             }
             else
             {

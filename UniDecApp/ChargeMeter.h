@@ -17,4 +17,6 @@
 @property (weak, nonatomic)  UILabel *opChargeLabel;
 @property int myCharge, opCharge;
 @property bool opUnavailable;
+
+-(void) presentCharge;
 @end

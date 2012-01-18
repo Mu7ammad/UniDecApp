@@ -170,22 +170,63 @@
 -(void)presentTurnWithData:(NSDictionary *)data{
     
     
-    //init card panel 
-    if ([data objectForKey:@"initiator"]) {
-        
+    
+    NSNumber* num = [data objectForKey:@"turnNo"];
+    int turnNo = [num intValue];
+    num = nil;
+    
+    //init card panel      
+    
+    if (turnNo>1) {//load from data, skip turn 0, 1
         
         cardPanel = [[CardPanel alloc]init:[data objectForKey:@"myCardNames"] from:[Profile sharedInstance].cardLibrary];
         
-    }
-    else{
+    } else {//load from profile
         
-        cardPanel = [[CardPanel alloc]init:[data objectForKey:@"hisCardNames"] from:[Profile sharedInstance].cardLibrary];
+        
+        cardPanel = [[CardPanel alloc]init:[Profile sharedInstance].cardPanelNames from:[Profile sharedInstance].cardLibrary];
+                
+    }
+    
+    //save opponent card panel for him
+    opCardNamesDeposit = [data objectForKey:@"opCardNames"];
+    
+    
+    
+    
+    //init played cards
+    if (turnNo%2) {//odd
+        NSString* myPre = [data objectForKey:@"myPrePlayedCardName"];
+        myPrePlayedCard = [[Card alloc] init:myPre from:[Profile sharedInstance].cardLibrary];
+        
+        NSString* opPre = [data objectForKey:@"opPrePlayedCardName"];
+        opPrePlayedCard = [[Card alloc] init:opPre from:[Profile sharedInstance].cardLibrary];
+        
         
     }
+    else{//even
+        
+        NSString* opPl = [data objectForKey:@"opPlayedCardName"];
+        opPlayedCard = [[Card alloc]init:opPl from:[Profile sharedInstance].cardLibrary];
+        
+        if (turn.turnNo>0) {
+            
+            NSString* myPre = [data objectForKey:@"myPrePlayedCardName"];
+            myPrePlayedCard = [[Card alloc] init:myPre from:[Profile sharedInstance].cardLibrary];
+            
+            NSString* opPre = [data objectForKey:@"opPrePlayedCardName"];
+            opPrePlayedCard = [[Card alloc] init:opPre from:[Profile sharedInstance].cardLibrary];
+            
+
+            
+        }
+        
+    }
+    
     
     //init turn
-    
     turn = [[Turn alloc]initWithTurnData:data];
+    
     
     
     //connect UI
@@ -201,7 +242,10 @@
                
         turn.chargeMeter.myChargeLabel = myChargeLabel;
         turn.chargeMeter.opChargeLabel = hisChargeLabel;
-        turn.weather.currentWeather = currentWeatherLabel;
+        [turn.chargeMeter presentCharge];
+        
+        turn.weather.currentWeatherLabel = currentWeatherLabel;
+        [turn.weather presentWeatehr];
         
     }
     else {
@@ -209,7 +253,7 @@
         
         turn.chargeMeter.myChargeLabel = myChargeLabel_iPod;
         turn.chargeMeter.opChargeLabel = hisChargeLabel_iPod;
-        turn.weather.currentWeather = currentWeatherLabel_iPod;
+        turn.weather.currentWeatherLabel = currentWeatherLabel_iPod;
         
     }
     
@@ -232,7 +276,7 @@
     //take moves and affect ChargeMeter
     [turn.myPlayer makeMove];
     
-    [turn.hisPlayer makeMove];
+    [turn.opPlayer makeMove];
     
 }
 
@@ -243,9 +287,9 @@
     NSMutableArray* objects = [[NSMutableArray alloc]init];
     NSMutableArray* keys = [[NSMutableArray alloc]init];
     
-    //12 items (I'm opponent)
+    //I'm becoming opponent !
       
-    //increment the number you send
+    //increment the turnNo you send
     NSNumber* turnNo = [NSNumber numberWithInt:turn.turnNo++];
     int x = [turnNo intValue];
     [objects addObject:turnNo];
@@ -297,17 +341,24 @@
         
     }
         
+    
+    //weather
+    NSNumber* HotCold = [NSNumber numberWithBool:turn.weather.nextHotCold];
+    [objects addObject:HotCold];
+    [keys addObject:@"HotCold"];
+    
+    NSNumber* WetDry = [NSNumber numberWithBool:turn.weather.nextWetDry];
+    [objects addObject:WetDry];
+    [keys addObject:@"WetDry"];
+    
+
+    
+    //opponent
     NSArray* opCardNames = [cardPanel getCardNames];
     [objects addObject:opCardNames];
     [keys addObject:@"opCardNames"];
     
-    
-    //weather 1
-    //weather 2
-    
-    
         
-    
     NSNumber* opCharge =[NSNumber numberWithInt:turn.chargeMeter.myCharge];
     int y = [opCharge intValue];
     [objects addObject:opCharge];
@@ -411,20 +462,12 @@
     
     NSLog(@"Entering new game...");
     
-    // prepare new game
+    // prepare new game (seed the data with turn 0 
     
-        
-    NSArray* myCardNames = [Profile sharedInstance].cardPanelNames;
+    NSNumber* turnNo =[NSNumber numberWithInt:0];
     
-    NSNumber* initiator = [NSNumber numberWithBool:YES];
-    
-    NSNumber* turnNo =[NSNumber numberWithInt:1];
-    
-    NSNumber* myCharge = [NSNumber numberWithInt:100];
-        
-    
-    NSArray* objects = [[NSArray alloc]initWithObjects:myCardNames,initiator,turnNo, myCharge, nil];
-    NSArray* keys = [[NSArray alloc]initWithObjects:@"myCardNames",@"initiator",@"turnNo",@"myCharge",nil];
+    NSArray* objects = [[NSArray alloc]initWithObjects:turnNo, nil];
+    NSArray* keys = [[NSArray alloc]initWithObjects:@"turnNo",nil];
     
     NSDictionary* FirstTurnData = [[NSDictionary alloc]initWithObjects:objects forKeys:keys];
     

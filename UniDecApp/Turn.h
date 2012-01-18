@@ -19,7 +19,7 @@
 
 
 @property (strong) Player* myPlayer;
-@property (strong) Player* hisPlayer;
+@property (strong) Player* opPlayer;
 @property (strong) Weather* weather;
 @property (strong) ChargeMeter* chargeMeter;
 

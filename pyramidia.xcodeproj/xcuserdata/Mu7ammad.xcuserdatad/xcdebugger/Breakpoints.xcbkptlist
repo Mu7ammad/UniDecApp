@@ -8,13 +8,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "UniDecApp/Turn.m"
-         timestampString = "348030821.426582"
+         filePath = "UniDecApp/Weather.m"
+         timestampString = "348539222.746019"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
-         landmarkName = "-initWithTurnData:"
+         startingLineNumber = "27"
+         endingLineNumber = "27"
+         landmarkName = "-setNextHotCold:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -22,13 +22,41 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "UniDecApp/Turn.m"
-         timestampString = "348031209.958124"
+         filePath = "UniDecApp/Weather.m"
+         timestampString = "348539224.805503"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "60"
-         endingLineNumber = "60"
-         landmarkName = "-initWithTurnData:"
+         startingLineNumber = "36"
+         endingLineNumber = "36"
+         landmarkName = "-getNextHotCold"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "UniDecApp/Weather.m"
+         timestampString = "348539226.75139"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
+         landmarkName = "-setNextWetDry:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "UniDecApp/Weather.m"
+         timestampString = "348539228.472208"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "55"
+         endingLineNumber = "55"
+         landmarkName = "-getNextWetDry"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
