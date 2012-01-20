@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Move.h"
 
 //connect to UI
 
@@ -19,4 +19,7 @@
 @property bool opUnavailable;
 
 -(void) presentCharge;
+
+-(void) applyMoves: (Move*) move1 :(Move*) move2;
+
 @end

@@ -11,10 +11,9 @@
 @implementation Move
 @synthesize magnitude, target;
 
--(void)applyMove:(ChargeMeter *)chargeMeter
-{
-
-
-
+-(Move *)winAgainst:(Move *)otherMove{
+    
+    
 }
+
 @end

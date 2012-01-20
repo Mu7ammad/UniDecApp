@@ -7,13 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ChargeMeter.h"
 
 @interface Move : NSObject
 
 @property int magnitude;
-@property bool target;
+@property bool target;// 0 my move, 1 op move
 
--(void) applyMove:(ChargeMeter*)chargeMeter;
-
+-(Move*) winAgainst: (Move*) otherMove;
 @end

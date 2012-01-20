@@ -272,12 +272,8 @@
         [buff applyBuff:turn];
         
     }
-    
-    //take moves and affect ChargeMeter
-    [turn.myPlayer makeMove];
-    
-    [turn.opPlayer makeMove];
-    
+        
+    [turn evaluateTurn];
 }
 
 

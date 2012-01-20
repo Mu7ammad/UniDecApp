@@ -107,8 +107,9 @@
 -(void)evaluateTurn;
 {
     
-    //the turn is buffed, generate the moves
+    //call after the turn is buffed
     
+    [chargeMeter applyMoves:[myPlayer makeMove]:[opPlayer makeMove]];
     
 
 }
